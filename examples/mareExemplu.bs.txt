@@ -45,7 +45,7 @@ mareFunctie bunaDimineataDragiBarladeni() {
 
     printOffendingCommand ("Cea mai medie sub medie de palindroame e: ", medieSubMedie)
 
-    printOffendingCommand ("Cea mai suma de non-palindroame e: ", eaMaiSumaDeNonPalindroame)
+    printOffendingCommand ("Cea mai suma de non-palindroame e: ", ceaMaiSumaDeNonPalindroame)
     
 } atatSAPutut
 
