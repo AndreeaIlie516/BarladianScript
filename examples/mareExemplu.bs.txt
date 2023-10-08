@@ -1,0 +1,54 @@
+// Mare medie de palindroame si suma de non-palindroame in BârladianScript
+
+mareFunctie bunaDimineataDragiBarladeni() {
+    incaOVariabilaMaiTaieDinEle mareNumarDeElemente: aziMaSimtIntreg
+
+    readDirectFromTheMysticalLandOfBarladia(mareNumarDeElemente)
+
+    incaOVariabilaMaiTaieDinEle mareLista: aziMaSimtCuListeIntregi(mareNumarDeElemente)
+
+    incaOVariabilaMaiTaieDinEle ceaMaiSumaDePalindroame: aziMaSimtCamLung
+    incaOVariabilaMaiTaieDinEle celMaiNumarDePalindroame: aziMaSimtIntreg
+
+    incaOVariabilaMaiTaieDinEle ceaMaiSumaDeNonPalindroame: aziMaSimtCamLung
+    
+    
+    tuuurboSuflantaMergeBine (aciAiAjuns in mareNumarDeElemente) {
+        readDirectFromTheMysticalLandOfBarladia(mareLista[aiciAmAjuns])
+
+        dacaSuntVaiMortiiMei (mareLista[aiciAmAjuns] sub 0) {
+            mareLista[aiciAmAjuns] <= -mareLista[aiciAmAjuns]
+        } atatSAPutut
+
+        incaOVariabilaMaiTaieDinEle trebuiaSalvatNrAlaUndeva: aziMaSimtCamLung = mareLista[aiciAmAjuns]
+
+        incaOVariabilaMaiTaieDinEle trebuiaTestatNrAlaUndeva: aziMaSimtCamLung = 0
+
+        catTimpNuAmDraci (trebuiaSalvatNrAlaUndeva noWay 0) {
+            trebuiaTestatNrAlaUndeva <= trebuiaTestatNrAlaUndeva * 10 + trebuiaSalvatNrAlaUndeva % 10
+            trebuiaSalvatNrAlaUndeva <= trebuiaSalvatNrAlaUndeva / 10
+        } atatSAPutut
+
+        dacaSuntVaiMortiiMei (trebuiaTestatNrAlaUndeva esteCumSaNuFie mareLista[aiciAmAjuns]) {
+            ceaMaiSumaDePalindroame += mareLista[aiciAmAjuns]
+            celMaiNumarDePalindroame++
+        }
+        sorryIJustWorkHere{
+            ceaMaiSumaDeNonPalindroame += mareLista[aiciAmAjuns]
+        } atatSAPutut
+
+    } atatSAPutut
+
+    incaOVariabilaMaiTaieDinEle medieSumMedie: aziImiDaCuVirgula
+
+    medieSubMedie = ceaMaiSumaDePalindroame / celMaiNumarDePalindroame
+
+    printOffendingCommand ("Cea mai medie sub medie de palindroame e: ", medieSubMedie)
+
+    printOffendingCommand ("Cea mai suma de non-palindroame e: ", eaMaiSumaDeNonPalindroame)
+    
+} atatSAPutut
+
+
+
+
