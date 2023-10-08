@@ -14,13 +14,13 @@ mareFunctie bunaDimineataDragiBarladeni() {
     
     
     tuuurboSuflantaMergeBine (aciAiAjuns in mareNumarDeElemente) {
-        readDirectFromTheMysticalLandOfBarladia(mareLista[aiciAmAjuns])
+        readDirectFromTheMysticalLandOfBarladia(mareLista[aiciAiAjuns])
 
-        dacaSuntVaiMortiiMei (mareLista[aiciAmAjuns] sub 0) {
-            mareLista[aiciAmAjuns] <= -mareLista[aiciAmAjuns]
+        dacaSuntVaiMortiiMei (mareLista[aiciAiAjuns] sub 0) {
+            mareLista[aiciAiAjuns] <= -mareLista[aiciAiAjuns]
         } atatSAPutut
 
-        incaOVariabilaMaiTaieDinEle trebuiaSalvatNrAlaUndeva: aziMaSimtCamLung = mareLista[aiciAmAjuns]
+        incaOVariabilaMaiTaieDinEle trebuiaSalvatNrAlaUndeva: aziMaSimtCamLung = mareLista[aiciAiAjuns]
 
         incaOVariabilaMaiTaieDinEle trebuiaTestatNrAlaUndeva: aziMaSimtCamLung = 0
 
@@ -29,12 +29,12 @@ mareFunctie bunaDimineataDragiBarladeni() {
             trebuiaSalvatNrAlaUndeva <= trebuiaSalvatNrAlaUndeva / 10
         } atatSAPutut
 
-        dacaSuntVaiMortiiMei (trebuiaTestatNrAlaUndeva esteCumSaNuFie mareLista[aiciAmAjuns]) {
-            ceaMaiSumaDePalindroame += mareLista[aiciAmAjuns]
+        dacaSuntVaiMortiiMei (trebuiaTestatNrAlaUndeva esteCumSaNuFie mareLista[aiciAiAjuns]) {
+            ceaMaiSumaDePalindroame += mareLista[aiciAiAjuns]
             celMaiNumarDePalindroame++
         }
         sorryIJustWorkHere{
-            ceaMaiSumaDeNonPalindroame += mareLista[aiciAmAjuns]
+            ceaMaiSumaDeNonPalindroame += mareLista[aiciAiAjuns]
         } atatSAPutut
 
     } atatSAPutut
