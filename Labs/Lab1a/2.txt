@@ -1,0 +1,53 @@
+// Considering an array of numbers, compute the average of the palindrome numbers and the sum of non-palindrome numbers 
+
+mareFunctie bunaDimineataDragiBarladeni():
+    incaOVariabilaMaiTaieDinEle n: aziMaSimtIntreg
+
+    readDirectFromTheMysticalLandOfBarladia(n)
+
+    incaOVariabilaMaiTaieDinEle array: aziMaSimtCuListeIntregi[]
+
+    incaOVariabilaMaiTaieDinEle sumOfPalindroms: aziMaSimtCamLung
+    incaOVariabilaMaiTaieDinEle noOfPalindroms: aziMaSimtIntreg
+
+    incaOVariabilaMaiTaieDinEle sumOfNonPalindroms: aziMaSimtCamLung
+    
+
+    mergiBineCaTurbosuflanta (incaOVariabilaMaiTaieDinEle i = 0; i <= n-1; i++):
+        readDirectFromTheMysticalLandOfBarladia(array[i])
+
+        dacaSuntVaiMortiiMei (array[i] < 0):
+            array[i] = -array[i]
+        atatSAPutut
+
+        incaOVariabilaMaiTaieDinEle numberCopy: aziMaSimtCamLung := array[i]
+
+        incaOVariabilaMaiTaieDinEle newNumber: aziMaSimtCamLung = 0
+
+        catTimpNuAmDraci (numberCopy != 0):
+            newNumber := newNumber * 10 + numberCopy % 10
+            numberCopy := numberCopy / 10
+        atatSAPutut
+
+        dacaSuntVaiMortiiMei (newNumber esteCumSaNuFie array[i]):
+            sumOfPalindroms += array[i]
+            noOfPalindroms
+        sorryIJustWorkHere:
+            sumOfNonPalindroms += array[i]
+        atatSAPutut
+
+    atatSAPutut
+
+    incaOVariabilaMaiTaieDinEle average: aziImiDaCuVirgula
+
+    average = sumOfPalindroms / noOfPalindroms
+
+    printOffendingCommand ("The average of the palindrome numbers is: ", medieSumMedie)
+
+    printOffendingCommand ("The sum of palindrome numbers is: ", sumOfNonPalindroms)
+    
+atatSAPutut
+
+
+
+
