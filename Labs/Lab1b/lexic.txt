@@ -1,0 +1,30 @@
+Alphabet: 
+a. Lower case letters (a-z) of the English alphabet
+b. Upper case letters (A-Z) of the English alphabet
+c. Decimal digits (0-9)
+d. Underline character '_'
+
+
+Lexic:
+a.Special symbols, representing:
+    operators: +, -, *, /, =, ==, !=, <, >, <=, >=
+    separators: {}, (), space, newline, :, ;, ", ','
+    reserved words: mareFunctie, bunaDimineataDragiBarladeni, incaOVariabilaMaiTaieDinEle, incaOConstantaMaiTaieDinEle, 
+                    readDirectFromTheMysticalLandOfBarladia, printOffendingCommand, 
+                    dacaSuntVaiMortiiMei, sorryIJustWorkHere, catTimpNuAmDraci, mergiBineCaTurbosuflanta, atatSAPutut
+
+b.Identifiers:
+    identifier = letter{letter|digit|"_"}
+    letter = "A" | "B" | "C" | ... | "Z" | "a" | "b" | "c" | ... | "z" 
+    digit = "0" | "1" | "2" | "3" | ... | "8" | "9" 
+
+c.Constants:
+
+integer = ["-" | "+"] non_zero {digit} | "0" 
+non_zero_digit = "1" | "2" | "3" | ... | "9" 
+
+float = ["-" | "+"] {non_zero} {digit} ["."] {digit} | "0" 
+
+string = """ {letter | string | "_" | "-" | " " | "."} """
+
+boolean = "true" | "false"

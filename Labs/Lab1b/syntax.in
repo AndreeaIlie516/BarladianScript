@@ -1,0 +1,30 @@
+program = {statement}
+statement = (declare_variable_statement|declare_constant_statement|declare_array_statement|assign_statement|if_statement|while_statement|io_statement|return_statement|function_call_statement)
+
+declare_variable_statement = "incaOVariabilaMaiTaieDinEle" identifier_list [":" type]
+declare_constant_statement = "incaOConstantaMaiTaieDinEle" identifier_list [":" type]
+declare_array_statement = "incaOVariabilaMaiTaieDinEle" identifier_list: arrayType "[" [positive_number] "]"
+
+type = "aziMaSimtIntreg" | "aziImiDaCuVirgula" | "aziMaSimtText"
+arrayType = "aziMaSimtCuListeIntregi" | "aziImiDaListeCuVirgula" | "aziMaSimtCuListeText"
+identifier_list = identifier {"," identifier }
+
+
+expression = number_expression | string_expression | boolean_expression
+number_expression = identifier | constant | number_expression ("+" | "-" | "*" | "\") number_expression | 
+                   "(" number_expression ("+" | "-" | "*" | "\") number_expression ")"
+string_expression = identifier | constant | string_expression "+" string_expression
+boolean_expression = identifier | constant | boolean_expression ("&&" | "||") boolean_expression | 
+                    "(" boolean_expression ("&&" | "||") boolean_expression ")"
+assign_statement = identifier "=" expression
+
+
+if_statement = "dacaSuntVaiMortiiMei" "(" condition ")" ":" {statement} ["sorryIJustWorkHere" ":" {statement}] "atatSAPutut"
+condition = expression relation_operator expression
+relation_operator = "==" | "!=" | "<" | ">" | "<=" | ">="
+while_statement = "catTimpNuAmDraci" "(" condition ")" ":" {statement} "atatSAPutut"
+return_statement = "returneazaBugNou" expression
+io_statement = "readDirectFromTheMysticalLandOfBarladia" | "printOffendingCommand" "(" identifier {"," identifier} ")"
+
+function_call_statement = function_name "(" {expression} {"," expression} ")"
+function_name = "readDirectFromTheMysticalLandOfBarladia" | "printOffendingCommand"
