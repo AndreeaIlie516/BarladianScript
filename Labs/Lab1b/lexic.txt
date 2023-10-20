@@ -20,10 +20,10 @@ b.Identifiers:
 
 c.Constants:
 
-integer = ["-" | "+"] non_zero {digit} | "0" 
+integer = ["-" | "+"] non_zero_digit {digit} | "0" 
 non_zero_digit = "1" | "2" | "3" | ... | "9" 
 
-float = ["-" | "+"] {non_zero} {digit} ["."] {digit} | "0" 
+float = ["-" | "+"] {non_zero_digit} {digit} ["."] {digit} | "0" 
 
 string = """ {letter | string | "_" | "-" | " " | "."} """
 
