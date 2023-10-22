@@ -7,10 +7,10 @@ mareFunctie bunaDimineataDragiBarladeni():
 
     incaOVariabilaMaiTaieDinEle array: aziMaSimtCuListeIntregi[]
 
-    incaOVariabilaMaiTaieDinEle sumOfPalindroms: aziMaSimtCamLung
+    incaOVariabilaMaiTaieDinEle sumOfPalindroms: aziMaSimtIntreg
     incaOVariabilaMaiTaieDinEle noOfPalindroms: aziMaSimtIntreg
 
-    incaOVariabilaMaiTaieDinEle sumOfNonPalindroms: aziMaSimtCamLung
+    incaOVariabilaMaiTaieDinEle sumOfNonPalindroms: aziMaSimtIntreg
     
 
     mergiBineCaTurbosuflanta (incaOVariabilaMaiTaieDinEle i = 0; i <= n-1; i++):
@@ -20,9 +20,9 @@ mareFunctie bunaDimineataDragiBarladeni():
             array[i] = -array[i]
         atatSAPutut
 
-        incaOVariabilaMaiTaieDinEle numberCopy: aziMaSimtCamLung := array[i]
+        incaOVariabilaMaiTaieDinEle numberCopy: aziMaSimtIntreg := array[i]
 
-        incaOVariabilaMaiTaieDinEle newNumber: aziMaSimtCamLung = 0
+        incaOVariabilaMaiTaieDinEle newNumber: aziMaSimtIntreg = 0
 
         catTimpNuAmDraci (numberCopy != 0):
             newNumber := newNumber * 10 + numberCopy % 10

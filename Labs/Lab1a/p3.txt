@@ -4,14 +4,14 @@ mareFunctie bunaDimineataDragiBarladeni():
     incaOVariabilaMaiTaieDinEle array: aziMaSimtCuListeIntregi[]
     incaOVariabilaMaiTaieDinEle n: aziMaSimtIntreg
 
-    incaOVariabilaMaiTaieDinEle sum: aziMaSimtCamLung
+    incaOVariabilaMaiTaieDinEle sum: aziMaSimtIntreg
     incaOVariabilaMaiTaieDinEle average: aziImiDaCuVirgula
 
     readDirectFromTheMysticalLandOfBarladia(n)
 
     mergiBineCaTurbosuflanta(incaOVariabilaMaiTaieDinEle i = 0; i <= n-1; i++):
         readDirectFromTheMysticalLandOfBarladia(array[i])
-        sum:aziMaSimtCamLung  += array[i]
+        sum:aziMaSimtIntreg  += array[i]
     atatSAPutut
 
     average = sum / n
