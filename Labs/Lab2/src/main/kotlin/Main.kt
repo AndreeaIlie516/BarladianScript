@@ -5,8 +5,8 @@ fun main(args: Array<String>) {
     symbolTable.addEntity("avsga", Type.CONSTANT)
     symbolTable.addEntity("a", Type.IDENTIFIER)
 
-    print("   Pos   |  Token  |  Type\n")
-    print(symbolTable.hasEntity("a", Type.CONSTANT).toString() + "  |    a    | " + Type.CONSTANT + '\n')
-    print(symbolTable.hasEntity("avsga", Type.CONSTANT).toString() + " |  avsga  | " + Type.CONSTANT + '\n')
-    print(symbolTable.hasEntity("a", Type.IDENTIFIER).toString() + "  |    a    | " + Type.IDENTIFIER + '\n')
+    print("   Pos   |  Token  \n")
+    print(symbolTable.hasEntity("a", Type.CONSTANT).toString() + "  |    a    " + '\n')
+    print(symbolTable.hasEntity("avsga", Type.CONSTANT).toString() + " |  avsga  "  + '\n')
+    print(symbolTable.hasEntity("a", Type.IDENTIFIER).toString() + "  |    a    "  + '\n')
 }

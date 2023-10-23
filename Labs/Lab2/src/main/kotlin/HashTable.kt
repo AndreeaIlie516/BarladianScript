@@ -7,7 +7,7 @@ enum class Type(val code: Int) {
 class HashTable(
     private var size: Int = 107
 ) {
-    var buckets: Array<MutableList<Pair<String, Type>>> = Array(size) { mutableListOf() }
+    private var buckets: Array<MutableList<Pair<String, Type>>> = Array(size) { mutableListOf() }
 
     private fun getHashSum(element: String): Int {
         var sum = 0
@@ -16,7 +16,7 @@ class HashTable(
         }
         return sum
     }
-    fun hash(element: String): Int {
+    private fun hash(element: String): Int {
         return getHashSum(element) % size
     }
 

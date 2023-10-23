@@ -1,7 +1,7 @@
 class SymbolTable(
     size: Int = 107
 ) {
-    private var table = HashTable(size)
+    var table = HashTable(size)
 
     fun addEntity(name: String, type:Type): Pair<Int, Int> {
         return table.insert(name, type)
