@@ -1,0 +1,18 @@
+mareFunctie bunaDimineataDragiBarladeni ():
+    incaOVariabilaMaiTaieDinEle a, b, c: aziMaSimtIntreg
+
+    readDirectFromTheMysticalLandOfBarladia(a)
+    readDirectFromTheMysticalLandOfBarladia(b)
+    readDirectFromTheMysticalLandOfBarladia(c)
+
+    incaOVariabilaMaiTaieDinEle sum: aziMaSimtIntreg = a + b
+
+    incaOVariabilaMaiTaieDinEle average: aziImiDaCuVirgula = sum / 2
+
+    dacaSuntVaiMortiiMei (c > average):
+        printOffendingCommand( c)
+    sorryIJustWorkHere:
+        printOffendingCommand(average)
+    atatSAPutut
+
+atatSAPutut
