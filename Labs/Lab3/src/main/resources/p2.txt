@@ -1,3 +1,5 @@
+// Considering an array of numbers, compute the average of the palindrome numbers and the sum of non-palindrome numbers
+
 mareFunctie bunaDimineataDragiBarladeni():
     incaOVariabilaMaiTaieDinEle n: aziMaSimtIntreg
 
@@ -10,7 +12,6 @@ mareFunctie bunaDimineataDragiBarladeni():
 
     incaOVariabilaMaiTaieDinEle sumOfNonPalindroms: aziMaSimtIntreg
     
-
     mergiBineCaTurbosuflanta (incaOVariabilaMaiTaieDinEle i = 0; i <= n-1; i++):
         readDirectFromTheMysticalLandOfBarladia(array[i])
 
@@ -40,7 +41,7 @@ mareFunctie bunaDimineataDragiBarladeni():
 
     average = sumOfPalindroms / noOfPalindroms
 
-    printOffendingCommand ("The average of the palindrome numbers is: ", medieSumMedie)
+    printOffendingCommand ("The average of the palindrome numbers is: ", average)
 
     printOffendingCommand ("The sum of palindrome numbers is: ", sumOfNonPalindroms)
     

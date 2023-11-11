@@ -5,16 +5,24 @@ class Scanner(
     private val tokenList: List<String>
 ) {
     private val symbolTable = SymbolTable()
-
     private val pif = mutableListOf<Pair<Int, Pair<Int, Int>>>()
 
-    private val table = mutableListOf<String>()
     private var index = 0
     private var currentLine = 1
 
+    private var errors = mutableListOf<String>()
+    private var errorMessage= ""
+
+    private var oneCharacterTokenList = mutableListOf<String>()
+
+    private val identifierCode = -1
+    private val constantCode = -2
+
     private fun nextToken() {
-        skipWhitespace()
-        skipComment()
+        if (skipWhitespace())
+            return
+        if (skipComment())
+            return
 
         if (index == program.length)
             return
@@ -22,50 +30,86 @@ class Scanner(
             Scanner::checkIfToken,
             Scanner::checkIfStringConstant,
             Scanner::checkIfIntConstant,
-            Scanner::checkIfIdentifier))
+            Scanner::checkIfIdentifier
+        ))
             if (function(this))
                 return
-        throw ScannerException("Lexical error: Cannot classify token", currentLine)
+        //throw ScannerException("Lexical error: Cannot classify token", currentLine)
+        index++
+        errorMessage = "Lexical error: Cannot classify token at line $currentLine\n"
+        if(!errors.contains(errorMessage))
+        errors.add(errorMessage)
+        return
     }
 
     fun scan(file: String) {
+        createOneCharacterTokenList()
         while (index in program.indices)
             nextToken()
+        if(errors.size == 0)
+            print("\nThere is no error in the program. \n\n")
+        else {
+            print("\nErrors: \n")
+            for (error in errors)
+                print(error + '\n')
+            print('\n')
+        }
         symbolTable.printToFile(file)
         File("src/main/resources/" + file + "PIF.out").bufferedWriter().use { out ->
-           pif.forEachIndexed { index, pair ->
+            pif.forEachIndexed { _, pair ->
                 out.write("" + pair.first + " " + pair.second + '\n')
             }
         }
     }
 
-    private fun skipWhitespace() {
-        while (index < program.length && program[index].isWhitespace()) {
-            if (program[index] == '\n')
-                ++currentLine
-            ++index
+    private fun skipWhitespace(): Boolean {
+        if (program[index] == '\n'){
+            currentLine++
+            index++
+            //print("Whitespace skipped\n")
+            return true
         }
+        while (index < program.length &&
+            (program[index] == ' ' || program[index] == '\n' || program[index] == '\t')) {
+            if (program[index] == '\n'){
+                currentLine++
+            }
+            index++
+            //print("Whitespace skipped\n")
+            return true
+        }
+        return false
     }
 
-    private fun skipComment() {
+    private fun skipComment(): Boolean {
         if (program.startsWith("//", index)) {
-            while (index < program.length && program[index] != '\n')
-                ++index
-            ++currentLine
-            return
+            while (index < program.length && program[index] != '\n'){
+                index++
+            }
+            if(index < program.length){
+                index++
+            }
+            currentLine++
+            print("Comment skipped\n")
+            return true
         }
+        return false
     }
 
     private fun checkIfIdentifier(): Boolean {
+        if (index < program.length &&
+            !((oneCharacterTokenList.contains(program[index-1].toString())) || program[index-1] == ' ' || program[index-1] == '\n' || program[index-1] == '\t')) {
+            return false
+        }
+
         val regex = Regex("^([a-zA-Z_][a-zA-Z0-9_]*)").find(program.substring(index))
         if(regex != null) {
-            val id = regex.groups[1]!!.value
+            val id = regex.value
             index += id.length
 
             val posInSymbolTable = symbolTable.addEntity(id, Type.IDENTIFIER)
-            print("\nIdentifier: $id, pos: $posInSymbolTable \n")
-            //pif.add(Pair(position.positionType.code, position.pair))
-            pif.add(Pair(getPosInTable(id), symbolTable.hasEntity(id, Type.IDENTIFIER)) as Pair<Int, Pair<Int, Int>>)
+            print("Identifier: $id\n")
+            pif.add(Pair(identifierCode, posInSymbolTable))
             return true
         }
         return false
@@ -74,70 +118,55 @@ class Scanner(
     private fun checkIfIntConstant(): Boolean {
         val regex = Regex("^([+-]?[1-9][0-9]*|0)").find(program.substring(index))
         if(regex != null) {
-            val const = regex.groups[1]!!.value
+            val const = regex.value
             index += const.length
 
             val posInSymbolTable = symbolTable.addEntity(const, Type.CONSTANT)
-            print("\nInt Constant: $const, pos: $posInSymbolTable \n")
-            pif.add(Pair(getPosInTable(const), symbolTable.hasEntity(const, Type.IDENTIFIER)) as Pair<Int, Pair<Int, Int>>)
+            print("Int Constant: $const\n")
+            pif.add(Pair(constantCode, posInSymbolTable))
             return true
         }
         return false
     }
 
     private fun checkIfStringConstant(): Boolean {
-        val pattern = """^"([^"]*)""""
-        val regex = Regex(pattern).find(program.substring(index))
+        val regex = Regex("^\"(.*?)\"").find(program.substring(index))
+
         if(regex != null) {
-            val const = regex.groups[1]!!.value
+            val const = regex.value
             index += const.length + 2
 
             val posInSymbolTable = symbolTable.addEntity(const, Type.CONSTANT)
-
-            print("\nString Constant: $const, pos: $posInSymbolTable \n")
-            pif.add(Pair(getPosInTable(const), symbolTable.hasEntity(const, Type.IDENTIFIER)) as Pair<Int, Pair<Int, Int>>)
+            print("String Constant: $const\n")
+            pif.add(Pair(constantCode, posInSymbolTable))
             return true
         }
         return false
     }
 
     private fun checkIfToken(): Boolean {
-        val regex = Regex("^([a-zA-Z]*)").find(program.substring(index))
-        for ((tokenIndex, token) in tokenList.withIndex()) {
-            if (program[index].toString() == token) {
-                print("Token: ${program[index]}\n")
-                pif.add(Pair(tokenIndex, Pair(-1,-1)))
-                index++
+        val sortedTokenList = tokenList.sortedByDescending { it.length }
+        for ((tokenIndex, token) in sortedTokenList.withIndex()) {
+            // Create a regex that looks for the token at the start of the substring
+            val regexPattern = "^${Regex.escape(token)}"
+            val regex = Regex(regexPattern)
+            val match = regex.find(program.substring(index))
+
+            if (match != null) {
+                val matchedToken = match.value
+                print("Token: $matchedToken\n")
+                pif.add(Pair(tokenIndex, Pair(-1, -1)))
+                index += matchedToken.length
                 return true
-            }
-             else {
-                if ((program[index].toString() + program[index+1].toString()) == token) {
-                    print("Token: ${program[index]}\n")
-                    pif.add(Pair(tokenIndex, Pair(-1,-1)))
-                    index += 2
-                    return true
-                }
-                else {
-                    if(regex != null) {
-                        val tokenInProgram = regex.groups[1]!!.value
-                        if(tokenInProgram == token) {
-                            print("Token: $tokenInProgram\n")
-                            pif.add(Pair(tokenIndex, Pair(-1,-1)))
-                            index += tokenInProgram.length
-                            return true
-                        }
-                    }
-                }
             }
         }
         return false
     }
-
-    private fun getPosInTable(name: String): Int {
-        for ((tableIndex, elem) in table.withIndex()) {
-            if(elem == name)
-                return tableIndex
+    private fun createOneCharacterTokenList() {
+        for(token in tokenList) {
+            if(token.length == 1) {
+                oneCharacterTokenList.add(token)
+            }
         }
-        return -1
     }
 }

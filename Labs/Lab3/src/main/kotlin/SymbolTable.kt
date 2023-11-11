@@ -20,7 +20,7 @@ class SymbolTable(
         File("src/main/resources/" + file + "ST.out").bufferedWriter().use { out ->
             table.buckets.forEachIndexed { bucketIndex, bucket ->
                 bucket.forEachIndexed { listIndex, pair ->
-                    out.write("" + pair.first + " " + pair.second + '\n')
+                    out.write("" + hasEntity(pair.first, pair.second) + " " + pair.first + '\n')
                 }
             }
         }
