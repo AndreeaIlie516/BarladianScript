@@ -61,6 +61,8 @@ class Scanner(
             } else {
                 println("The sequence '$sequence' is not accepted by the FA.")
             }
+
+
         }
         else {
             print("\nErrors: \n")

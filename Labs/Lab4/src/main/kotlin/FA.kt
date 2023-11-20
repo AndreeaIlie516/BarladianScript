@@ -85,20 +85,23 @@ class FA {
     }
 
     fun isSequenceAccepted(sequence: List<String>): Boolean {
+        println("The sequence is: $sequence")
         var currentState = initialState
         for (letter in sequence) {
-            var transitionFound = false
+            println("Letter: $letter")
+            var newState: String? = null
+
             for ((from, to, weight) in transitions) {
                 if ((from == currentState) && (weight.toString() == letter)) {
-                    currentState = to
-                    transitionFound = true
+                    newState = to
                     break
                 }
             }
-            if (!transitionFound) {
+            if (newState == null) {
                 return false
             }
+            currentState = newState
         }
-        return finalState == currentState
+        return currentState == finalState
     }
 }
