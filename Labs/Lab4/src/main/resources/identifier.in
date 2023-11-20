@@ -1,0 +1,5 @@
+states: p,s
+alphabet: a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,0,1,2,3,4,5,6,7,8,9,_
+initial state: p
+final state: s
+transitions: (p,s,a);(p,s,b);(p,s,c);(p,s,d);(p,s,e);(p,s,f);(p,s,g);(p,s,h);(p,s,i);(p,s,j);(p,s,k);(p,s,l);(p,s,m);(p,s,n);(p,s,o);(p,s,p);(p,s,q);(p,s,r);(p,s,s);(p,s,t);(p,s,u);(p,s,v);(p,s,w);(p,s,x);(p,s,y);(p,s,z);(p,s,A);(p,s,B);(p,s,C);(p,s,D);(p,s,E);(p,s,F);(p,s,G);(p,s,H);(p,s,I);(p,s,J);(p,s,K);(p,s,L);(p,s,M);(p,s,N);(p,s,O);(p,s,P);(p,s,Q);(p,s,R);(p,s,S);(p,s,T);(p,s,U);(p,s,V);(p,s,W);(p,s,X);(p,s,Y);(p,s,Z);(p,s,_);(s,s,a);(s,s,b);(s,s,c);(s,s,d);(s,s,e);(s,s,f);(s,s,g);(s,s,h);(s,s,i);(s,s,j);(s,s,k);(s,s,l);(s,s,m);(s,s,n);(s,s,o);(s,s,p);(s,s,q);(s,s,r);(s,s,s);(s,s,t);(s,s,u);(s,s,v);(s,s,w);(s,s,x);(s,s,y);(s,s,z);(s,s,A);(s,s,B);(s,s,C);(s,s,D);(s,s,E);(s,s,F);(s,s,G);(s,s,H);(s,s,I);(s,s,J);(s,s,K);(s,s,L);(s,s,M);(s,s,N);(s,s,O);(s,s,P);(s,s,Q);(s,s,R);(s,s,S);(s,s,T);(s,s,U);(s,s,V);(s,s,W);(s,s,X);(s,s,Y);(s,s,Z);(s,s,0);(s,s,1);(s,s,2);(s,s,3);(s,s,4);(s,s,5);(s,s,6);(s,s,7);(s,s,8);(s,s,9);(s,s,_)

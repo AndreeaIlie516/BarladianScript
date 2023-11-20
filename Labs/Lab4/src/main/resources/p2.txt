@@ -19,7 +19,7 @@ mareFunctie bunaDimineataDragiBarladeni():
             array[i] = -array[i]
         atatSAPutut
 
-        incaOVariabilaMaiTaieDinEle numberCopy: aziMaSimtIntreg := array[i]
+        incaOVariabilaMaiTaieDinEle numberCopy: aziMaSimtIntreg = array[i]
 
         incaOVariabilaMaiTaieDinEle newNumber: aziMaSimtIntreg = 0
 

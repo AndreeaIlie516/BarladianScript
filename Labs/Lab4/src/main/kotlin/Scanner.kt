@@ -48,19 +48,6 @@ class Scanner(
             nextToken()
         if(errors.size == 0) {
             print("\nThere is no error in the program. \n\n")
-
-            val fa = FA()
-            fa.createMenu()
-            print("Enter a sequence to check if it's accepted by the FA: ")
-
-            val sequence = fa.readSequenceOfLetters()
-
-            val isAccepted = fa.isSequenceAccepted(sequence)
-            if (isAccepted) {
-                println("The sequence '$sequence' is accepted by the FA.")
-            } else {
-                println("The sequence '$sequence' is not accepted by the FA.")
-            }
         }
         else {
             print("\nErrors: \n")
@@ -116,11 +103,10 @@ class Scanner(
             return false
         }
 
-        val regex = Regex("^([a-zA-Z_][a-zA-Z0-9_]*)").find(program.substring(index))
-        if(regex != null) {
-            val id = regex.value
+        val fa = FA("src/main/resources/identifier.in")
+        val id = fa.getNext(program.substring(index))
+        if(id != null) {
             index += id.length
-
             val posInSymbolTable = symbolTable.addEntity(id, Type.IDENTIFIER)
             print("Identifier: $id\n")
             pif.add(Pair(identifierCode, posInSymbolTable))
@@ -130,11 +116,21 @@ class Scanner(
     }
 
     private fun checkIfIntConstant(): Boolean {
-        val regex = Regex("^([+-]?[1-9][0-9]*|0)").find(program.substring(index))
-        if(regex != null) {
-            val const = regex.value
+//        val regex = Regex("^([+-]?[1-9][0-9]*|0)").find(program.substring(index))
+//        if(regex != null) {
+//            val const = regex.value
+//            index += const.length
+//
+//            val posInSymbolTable = symbolTable.addEntity(const, Type.CONSTANT)
+//            print("Int Constant: $const\n")
+//            pif.add(Pair(constantCode, posInSymbolTable))
+//            return true
+//        }
+//        return false
+        val fa = FA("src/main/resources/intConstant.in")
+        val const = fa.getNext(program.substring(index))
+        if(const != null) {
             index += const.length
-
             val posInSymbolTable = symbolTable.addEntity(const, Type.CONSTANT)
             print("Int Constant: $const\n")
             pif.add(Pair(constantCode, posInSymbolTable))

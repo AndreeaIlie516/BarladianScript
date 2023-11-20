@@ -1,0 +1,5 @@
+states: p,r,s
+alphabet: 0,1,2,3,4,5,6,7,8,9,-,+
+initial state: p
+final state: s
+transitions: (p,s,+);(p,s,-);(p,r,0);(r,s,0);(r,s,1);(r,s,2);(r,s,3);(r,s,4);(r,s,5);(r,s,6);(r,s,7);(r,s,8);(r,s,9);(p,s,1);(p,s,2);(p,s,3);(p,s,4);(p,s,5);(p,s,6);(p,s,7);(p,s,8);(p,s,9);(s,s,0);(s,s,1);(s,s,2);(s,s,3);(s,s,4);(s,s,5);(s,s,6);(s,s,7);(s,s,8);(s,s,9);(p,s,0)
