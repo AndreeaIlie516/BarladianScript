@@ -46,8 +46,22 @@ class Scanner(
         createOneCharacterTokenList()
         while (index in program.indices)
             nextToken()
-        if(errors.size == 0)
+        if(errors.size == 0) {
             print("\nThere is no error in the program. \n\n")
+
+            val fa = FA()
+            fa.createMenu()
+            print("Enter a sequence to check if it's accepted by the FA: ")
+
+            val sequence = fa.readSequenceOfLetters()
+
+            val isAccepted = fa.isSequenceAccepted(sequence)
+            if (isAccepted) {
+                println("The sequence '$sequence' is accepted by the FA.")
+            } else {
+                println("The sequence '$sequence' is not accepted by the FA.")
+            }
+        }
         else {
             print("\nErrors: \n")
             for (error in errors)
