@@ -1,5 +1,6 @@
 import java.io.File
 
+
 class FA {
     private lateinit var states: List<String>
     private lateinit var alphabet: List<String>
@@ -35,7 +36,8 @@ class FA {
             3. Display the transitions
             4. Display the initial state
             5. Display the final state
-            6. Exit
+            6. Check sequence
+            7. Exit
         """.trimIndent())
     }
 
@@ -57,6 +59,10 @@ class FA {
                 3 -> println("Transitions: $transitions")
                 4 -> println("Initial state: $initialState")
                 5 -> println("Final state: $finalState")
+                6 -> {
+                    val sequence = readSequenceOfLetters()
+                    println("Sequence is accepted: ${isSequenceAccepted(sequence)}")
+                }
                 else -> {
                     println("You exited the application")
                     return
@@ -64,5 +70,35 @@ class FA {
             }
             print('\n')
         }
+    }
+
+    fun readSequenceOfLetters(): List<String> {
+        print("Sequence length: ")
+        val n = readln().toInt()
+        val listOfLetters = mutableListOf<String>()
+        for (i in 1..n) {
+            print("> ")
+            val letter = readlnOrNull()
+            listOfLetters.add(letter!!)
+        }
+        return listOfLetters
+    }
+
+    fun isSequenceAccepted(sequence: List<String>): Boolean {
+        var currentState = initialState
+        for (letter in sequence) {
+            var transitionFound = false
+            for ((from, to, weight) in transitions) {
+                if ((from == currentState) && (weight.toString() == letter)) {
+                    currentState = to
+                    transitionFound = true
+                    break
+                }
+            }
+            if (!transitionFound) {
+                return false
+            }
+        }
+        return finalState == currentState
     }
 }
