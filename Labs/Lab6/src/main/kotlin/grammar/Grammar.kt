@@ -1,3 +1,5 @@
+package grammar
+
 import java.io.File
 
 class Grammar {
@@ -37,10 +39,12 @@ class Grammar {
 
     fun printProductionsForNonTerminal(nonTerminal: String) =
         println("Productions for $nonTerminal: ${productions[nonTerminal]}")
-
     fun getProductionsForNonTerminal(nonTerminal: String): List<List<String>>? = productions[nonTerminal]
 
+    fun getStartSymbol(): String = startSymbol
+
     fun isCFG(): Boolean = productions.keys.all { it in nonTerminals && " " !in it }
+
     fun isNonTerminal(element: String): Boolean = element in nonTerminals
     fun isTerminal(element: String): Boolean = element in terminals
 }
