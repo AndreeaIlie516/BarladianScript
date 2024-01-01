@@ -1,3 +1,5 @@
+import Grammar.Grammar
+
 fun main() {
     val grammar = Grammar()
     grammar.readGrammarFromFile("src/main/resources/g1.in")
