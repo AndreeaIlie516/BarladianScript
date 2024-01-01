@@ -1,0 +1,45 @@
+program statement_list statement declare_variable_statement declare_constant_statement declare_array_statement assign_statement array_assign_statement if_statement while_statement io_statement return_statement function_call_statement expression number_expression string_expression boolean_expression arith_op logical_op type arrayType identifier identifier_list constant integer float string boolean letter digit non_zero_digit non_negative_number condition relation_operator compound_statement function_name
+mareFunctie bunaDimineataDragiBarladeni atatSAPutut incaOVariabilaMaiTaieDinEle incaOConstantaMaiTaieDinEle readDirectFromTheMysticalLandOfBarladia printOffendingCommand dacaSuntVaiMortiiMei sorryIJustWorkHere catTimpNuAmDraci mergiBineCaTurbosuflanta returneazaBugNou aziMaSimtIntreg aziImiDaCuVirgula aziMaSimtText aziMaSimtCuListeIntregi aziImiDaListeCuVirgula aziMaSimtCuListeText + - * / = == != < > <= >= { } ( ) space newline : ; " ’ && || a b c c d e f g h i j k l m n o p q r s  z A B C ... Z 0 1 2 3 4 5 6 7 8 9 _
+program
+statement_list -> statement statement_list
+program -> statement_list
+statement -> declare_variable_statement | declare_constant_statement | declare_array_statement | assign_statement | array_assign_statement | if_statement | while_statement | io_statement | return_statement | function_call_statement
+declare_variable_statement -> incaOVariabilaMaiTaieDinEle identifier_list : type
+declare_constant_statement -> incaOConstantaMaiTaieDinEle identifier_list : type
+declare_array_statement -> incaOVariabilaMaiTaieDinEle identifier_list : arrayType [ non_negative_number ]
+assign_statement -> identifier = expression
+array_assign_statement -> identifier [ non_negative_number ] = expression
+if_statement -> dacaSuntVaiMortiiMei ( condition ) { statement_list } sorryIJustWorkHere { statement_list } atatSAPutut
+while_statement -> catTimpNuAmDraci ( condition ) { statement_list } atatSAPutut
+io_statement -> readDirectFromTheMysticalLandOfBarladia | printOffendingCommand ( identifier_list )
+return_statement -> returneazaBugNou expression
+function_call_statement -> function_name ( expression_list )
+expression -> number_expression | string_expression | boolean_expression
+number_expression -> identifier | constant | number_expression arith_op number_expression | ( number_expression arith_op number_expression )
+string_expression -> identifier | constant | string_expression + string_expression |
+boolean_expression -> identifier | constant | boolean_expression logical_op boolean_expression | ( boolean_expression logical_op boolean_expression )
+arith_op -> + | - | * | /
+logical_op -> && | ||
+type -> aziMaSimtIntreg | aziImiDaCuVirgula | aziMaSimtText
+arrayType -> aziMaSimtCuListeIntregi | aziImiDaListeCuVirgula | aziMaSimtCuListeText
+identifier_list -> identifier | identifier identifier_list
+constant -> integer | float | string | boolean
+integer -> maybe_sign positive_number | 0
+float -> maybe_sign positive_number . the_rest_of_int_constant | 0
+string -> " the_interior_of_string_constant "
+boolean -> true | false
+letter -> a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
+digit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+non_zero_digit -> 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+non_negative_number -> non_zero_digit the_rest_of_int_constant | 0
+condition -> expression relational_operator expression
+relational_operator -> == | != | < | > | <= | >=
+compound_statement -> statement compound_statement | ε
+function_name -> mareFunctie | bunaDimineataDragiBarladeni | readDirectFromTheMysticalLandOfBarladia | printOffendingCommand
+identifier -> beginning_of_identifier rest_of_identifier
+beginning_of_identifier -> letter | _
+rest_of_identifier -> ε | letter rest_of_identifier | digit rest_of_identifier | _ rest_of_identifier
+maybe_sign -> + | - | ε
+positive_number -> non_zero_digit the_rest_of_int_constant
+the_rest_of_int_constant -> ε | digit the_rest_of_int_constant
+the_interior_of_string_constant -> ε | letter the_interior_of_string_constant | digit the_interior_of_string_constant | _ the_interior_of_string_constant
