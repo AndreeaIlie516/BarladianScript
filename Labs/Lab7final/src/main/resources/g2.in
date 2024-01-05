@@ -1,0 +1,31 @@
+program statement_list statement declare_variable_statement function_declaration_statement function_call_statement expression function_name type identifier letter beginning_of_identifier rest_of_identifier assign_statement expression expression_list number_expression arith_op logical_op constant digit non_zero_digit sign positive_number integer rest_of_int_constant if_statement condition relational_operator
+mareFunctie bunaDimineataDragiBarladeni atatSAPutut incaOVariabilaMaiTaieDinEle incaOConstantaMaiTaieDinEle readDirectFromTheMysticalLandOfBarladia printOffendingCommand dacaSuntVaiMortiiMei sorryIJustWorkHere catTimpNuAmDraci mergiBineCaTurbosuflanta returneazaBugNou aziMaSimtIntreg aziImiDaCuVirgula aziMaSimtText aziMaSimtCuListeIntregi aziImiDaListeCuVirgula aziMaSimtCuListeText + - * / = == != < > <= >= { } ( ) : ; " ’ && ||  ’ && || a b c c d e f g h i j k l m n o p q r s t w x y z A B C D E F G H I J K L M N O P Q R S T W X Y Z 0 1 2 3 4 5 6 7 8 9 _
+program
+statement_list -> statement | statement statement_list
+program -> statement_list
+statement -> function_declaration_statement | if_statement | assign_statement | declare_variable_statement | function_call_statement
+declare_variable_statement -> incaOVariabilaMaiTaieDinEle identifier : type
+assign_statement -> identifier = expression
+if_statement -> dacaSuntVaiMortiiMei ( condition ) : statement_list  sorryIJustWorkHere : statement_list atatSAPutut
+function_declaration_statement -> mareFunctie function_name ( ) : statement_list atatSAPutut
+function_call_statement -> function_name ( identifier )
+expression -> number_expression
+expression_list -> expression | expression expression_list
+number_expression -> identifier | identifier arith_op identifier
+arith_op -> + | - | * | /
+logical_op -> && | ||
+type -> aziMaSimtIntreg | aziImiDaCuVirgula | aziMaSimtText
+function_name -> bunaDimineataDragiBarladeni | readDirectFromTheMysticalLandOfBarladia | printOffendingCommand
+identifier -> beginning_of_identifier | beginning_of_identifier rest_of_identifier
+beginning_of_identifier -> letter
+rest_of_identifier -> letter | letter rest_of_identifier
+letter -> a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z
+constant -> integer
+integer -> 0 | positive_number | sign positive_number
+sign -> + | -
+positive_number -> non_zero_digit | rest_of_int_constant
+digit -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+non_zero_digit -> 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+rest_of_int_constant -> digit | digit rest_of_integer_constant
+condition -> identifier | identifier relational_operator identifier
+relational_operator -> == | != | < | > | <= | >=

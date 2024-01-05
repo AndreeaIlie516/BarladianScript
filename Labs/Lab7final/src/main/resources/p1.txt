@@ -1,0 +1,21 @@
+mareFunctie bunaDimineataDragiBarladeni ():
+
+    incaOVariabilaMaiTaieDinEle a: aziMaSimtIntreg
+    incaOVariabilaMaiTaieDinEle b: aziMaSimtIntreg
+    incaOVariabilaMaiTaieDinEle c: aziMaSimtIntreg
+
+    readDirectFromTheMysticalLandOfBarladia(a)
+    readDirectFromTheMysticalLandOfBarladia(b)
+    readDirectFromTheMysticalLandOfBarladia(c)
+
+    incaOVariabilaMaiTaieDinEle s: aziMaSimtIntreg
+
+    s = a + b
+
+    dacaSuntVaiMortiiMei (c > s):
+        printOffendingCommand(c)
+    sorryIJustWorkHere:
+        printOffendingCommand(s)
+    atatSAPutut
+
+atatSAPutut

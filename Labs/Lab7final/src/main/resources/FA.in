@@ -1,0 +1,5 @@
+states: p,r,s
+alphabet: a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,w,x,y,z
+initial state: p
+final state: s
+transitions: (p,s,0);(s,s,0);(s,s,1)
