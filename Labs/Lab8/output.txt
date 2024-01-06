@@ -1,0 +1,76 @@
+mareFunctie - reserved word
+bunaDimineataDragiBarladeni - reserved word
+( - separator
+) - separator
+: - separator
+incaOVariabilaMaiTaieDinEle - reserved word
+a - identifier
+, - separator
+b - identifier
+, - separator
+c - identifier
+: - separator
+aziMaSimtIntreg - reserved word
+readDirectFromTheMysticalLandOfBarladia - reserved word
+( - separator
+a - identifier
+) - separator
+readDirectFromTheMysticalLandOfBarladia - reserved word
+( - separator
+b - identifier
+) - separator
+readDirectFromTheMysticalLandOfBarladia - reserved word
+( - separator
+c - identifier
+) - separator
+incaOVariabilaMaiTaieDinEle - reserved word
+sum - identifier
+: - separator
+aziMaSimtIntreg - reserved word
+= - operator
+a - identifier
++ - operator
+b - identifier
+incaOVariabilaMaiTaieDinEle - reserved word
+average - identifier
+: - separator
+aziImiDaCuVirgula - reserved word
+= - operator
+sum - identifier
+/ - operator
+2 - int constant
+dacaSuntVaiMortiiMei - reserved word
+( - separator
+c - identifier
+> - operator
+average - identifier
+) - separator
+: - separator
+printOffendingCommand - reserved word
+( - separator
+"The third number, " - str constant
+, - separator
+c - identifier
+, - separator
+" is larger than the average, " - str constant
+, - separator
+average - identifier
+, - separator
+"." - str constant
+) - separator
+sorryIJustWorkHere - reserved word
+: - separator
+printOffendingCommand - reserved word
+( - separator
+"The third number, " - str constant
+, - separator
+c - identifier
+, - separator
+" is smaller than the average, " - str constant
+, - separator
+average - identifier
+, - separator
+"." - str constant
+) - separator
+atatSAPutut - reserved word
+atatSAPutut - reserved word

@@ -1,0 +1,20 @@
+//Compute the average of 2 numbers and decide if a third read number is larger than the computed average
+
+mareFunctie bunaDimineataDragiBarladeni ():
+    incaOVariabilaMaiTaieDinEle a, b, c: aziMaSimtIntreg
+
+    readDirectFromTheMysticalLandOfBarladia(a)
+    readDirectFromTheMysticalLandOfBarladia(b)
+    readDirectFromTheMysticalLandOfBarladia(c)
+
+    incaOVariabilaMaiTaieDinEle sum: aziMaSimtIntreg = a + b
+
+    incaOVariabilaMaiTaieDinEle average: aziImiDaCuVirgula = sum / 2
+
+    dacaSuntVaiMortiiMei (c > average):
+        printOffendingCommand("The third number, ", c, " is larger than the average, ", average, ".")
+    sorryIJustWorkHere:
+        printOffendingCommand("The third number, ", c, " is smaller than the average, ", average, ".")
+    atatSAPutut
+
+atatSAPutut

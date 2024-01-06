@@ -1,0 +1,95 @@
+%{
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int lines = 0;
+%}
+
+%option noyywrap
+%option caseless
+
+LETTER          [a-zA-Z_]
+DIGIT           [0-9]
+NON_ZERO_DIGIT  [1-9]
+SYMBOL          [-_ ,.:;!@#$%^&*()+=<>?\/]
+INT_CONSTANT    [+-]?{NON_ZERO_DIGIT}{DIGIT}*|0
+STRING_CONSTANT (\"({LETTER}|{DIGIT}|_|{SYMBOL})*\")
+IDENTIFIER      {LETTER}({LETTER}|{DIGIT})*
+BAD_IDENTIFIER  ({DIGIT})+({LETTER})+({LETTER}|{DIGIT})*
+COMMENT		    ("/*"[^*]*"*/")|("//".*)
+
+%%
+
+[ \t]+ {}
+[\n]+ {++lines;}
+
+{COMMENT} {}
+
+"mareFunctie"                                   { printf("%s - reserved word\n", yytext);}
+"bunaDimineataDragiBarladeni"                   { printf("%s - reserved word\n", yytext);}
+"incaOVariabilaMaiTaieDinEle"                   { printf("%s - reserved word\n", yytext);}
+"incaOConstantaMaiTaieDinEle"                   { printf("%s - reserved word\n", yytext);}
+"readDirectFromTheMysticalLandOfBarladia"       { printf("%s - reserved word\n", yytext);}
+"printOffendingCommand"                         { printf("%s - reserved word\n", yytext);}
+"dacaSuntVaiMortiiMei"                          { printf("%s - reserved word\n", yytext);}
+"sorryIJustWorkHere"                            { printf("%s - reserved word\n", yytext);}
+"catTimpNuAmDraci"                              { printf("%s - reserved word\n", yytext);}
+"mergiBineCaTurbosuflanta"                      { printf("%s - reserved word\n", yytext);}
+"atatSAPutut"                                   { printf("%s - reserved word\n", yytext);}
+"returneazaBugNou"                              { printf("%s - reserved word\n", yytext);}
+
+aziMaSimtIntreg             { printf("%s - reserved word\n", yytext);}
+aziImiDaCuVirgula           { printf("%s - reserved word\n", yytext);}
+aziMaSimtText               { printf("%s - reserved word\n", yytext);}
+aziMaSimtCaracter           { printf("%s - reserved word\n", yytext);}
+aziMaSimtCuListeIntregi     { printf("%s - reserved word\n", yytext);}
+aziImiDaListeCuVirgula      { printf("%s - reserved word\n", yytext);}
+aziMaSimtCuListeText        { printf("%s - reserved word\n", yytext);}
+aziMaSimtCuListeCaracter    { printf("%s - reserved word\n", yytext);}
+
+"+"  { printf("%s - operator\n", yytext);}
+"-"  { printf("%s - operator\n", yytext);}
+"*"  { printf("%s - operator\n", yytext);}
+"/"  { printf("%s - operator\n", yytext);}
+"%"  { printf("%s - operator\n", yytext);}
+"="  { printf("%s - operator\n", yytext);}
+">"  { printf("%s - operator\n", yytext);}
+">=" { printf("%s - operator\n", yytext);}
+"<"  { printf("%s - operator\n", yytext);}
+"<=" { printf("%s - operator\n", yytext);}
+"==" { printf("%s - operator\n", yytext);}
+"!=" { printf("%s - operator\n", yytext);}
+"&&" { printf("%s - operator\n", yytext);}
+"||" { printf("%s - operator\n", yytext);}
+
+":" { printf("%s - separator\n", yytext);}
+";" { printf("%s - separator\n", yytext);}
+"(" { printf("%s - separator\n", yytext);}
+")" { printf("%s - separator\n", yytext);}
+"[" { printf("%s - separator\n", yytext);}
+"]" { printf("%s - separator\n", yytext);}
+"{" { printf("%s - separator\n", yytext);}
+"}" { printf("%s - separator\n", yytext);}
+"," { printf("%s - separator\n", yytext);}
+
+{IDENTIFIER} {printf("%s - identifier\n", yytext);}
+
+{BAD_IDENTIFIER} {printf("Error at token %s at line %d\n", yytext, lines); return -1;}
+
+{INT_CONSTANT} {printf("%s - int constant\n", yytext);}
+
+{STRING_CONSTANT} {printf("%s - str constant\n", yytext);}
+
+. {printf("Error at token %s at line %d\n", yytext, lines); return -1;}
+
+%%
+
+int main(int argc, char **argv ) 
+{ 
+    if ( argc > 1 ) 
+    	yyin = fopen(argv[1], "r"); 
+    else 
+    	yyin = stdin;
+    yylex();
+}

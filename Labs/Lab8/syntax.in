@@ -1,0 +1,37 @@
+Syntax:
+
+program = mareFunctie bunaDimineataDragiBarladeni(): {statement} atatSAPutut
+statement = (declare_variable_statement|declare_constant_statement|declare_array_statement|assign_statement|array_assign_statement|if_statement|while_statement|io_statement|return_statement|function_call_statement)
+
+declare_variable_statement = "incaOVariabilaMaiTaieDinEle" identifier_list [":" type]
+declare_constant_statement = "incaOConstantaMaiTaieDinEle" identifier_list [":" type]
+declare_array_statement = "incaOVariabilaMaiTaieDinEle" identifier_list: arrayType "[" [positive_number] "]"
+
+type = "aziMaSimtIntreg" | "aziImiDaCuVirgula" | "aziMaSimtText"
+arrayType = "aziMaSimtCuListeIntregi" | "aziImiDaListeCuVirgula" | "aziMaSimtCuListeText"
+identifier_list = identifier {"," identifier}
+
+
+expression = number_expression | string_expression | boolean_expression
+number_expression = identifier | constant | number_expression ("+" | "-" | "*" | "\") number_expression | 
+                   "(" number_expression ("+" | "-" | "*" | "\") number_expression ")"
+string_expression = identifier | constant | string_expression "+" string_expression
+boolean_expression = identifier | constant | boolean_expression ("&&" | "||") boolean_expression | 
+                    "(" boolean_expression ("&&" | "||") boolean_expression ")"
+assign_statement = identifier "=" expression
+array_assign_statement = identifier "[" non_negative_number "]" "=" expression
+non_negative_number = non_zero_digit {digit} | "0" 
+non_zero_digit = "1" | "2" | "3" | ... | "9" 
+
+
+compound_statement = statement {"," statement}
+if_statement = "dacaSuntVaiMortiiMei" "(" condition ")" ":" compound_statement ["sorryIJustWorkHere" ":" compound_statement] "atatSAPutut"
+condition = expression relation_operator expression
+relation_operator = "==" | "!=" | "<" | ">" | "<=" | ">="
+while_statement = "catTimpNuAmDraci" "(" condition ")" ":" compound_statement "atatSAPutut"
+for_statement = "mergiBineCaTurbosuflanta" "(" ["incaOVariabilaMaiTaieDinEle"] assign_statement ";" condition ";" assign_statement ")" ":" compound_statement "atatSAPutut"
+return_statement = "returneazaBugNou" expression
+io_statement = "readDirectFromTheMysticalLandOfBarladia" | "printOffendingCommand" "(" identifier {"," identifier} ")"
+
+function_call_statement = function_name "(" {expression} {"," expression} ")"
+function_name = "readDirectFromTheMysticalLandOfBarladia" | "printOffendingCommand"
