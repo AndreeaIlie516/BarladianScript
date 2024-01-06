@@ -1,0 +1,27 @@
+mareFunctie - reserved word
+bunaDimineataDragiBarladeni - reserved word
+( - separator
+) - separator
+: - separator
+incaOVariabilaMaiTaieDinEle - reserved word
+a - identifier
+, - separator
+b - identifier
+, - separator
+c - identifier
+: - separator
+aziMaSimtIntreg - reserved word
+readDirectFromTheMysticalLandOfBarladia - reserved word
+( - separator
+a - identifier
+) - separator
+readDirectFromTheMysticalLandOfBarladia - reserved word
+( - separator
+b - identifier
+) - separator
+readDirectFromTheMysticalLandOfBarladia - reserved word
+( - separator
+c - identifier
+) - separator
+incaOVariabilaMaiTaieDinEle - reserved word
+Error at token 2sum at line 5

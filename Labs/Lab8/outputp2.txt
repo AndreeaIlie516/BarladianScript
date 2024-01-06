@@ -1,0 +1,164 @@
+mareFunctie - reserved word
+bunaDimineataDragiBarladeni - reserved word
+( - separator
+) - separator
+: - separator
+incaOVariabilaMaiTaieDinEle - reserved word
+n - identifier
+: - separator
+aziMaSimtIntreg - reserved word
+readDirectFromTheMysticalLandOfBarladia - reserved word
+( - separator
+n - identifier
+) - separator
+incaOVariabilaMaiTaieDinEle - reserved word
+array - identifier
+: - separator
+aziMaSimtCuListeIntregi - reserved word
+[ - separator
+] - separator
+incaOVariabilaMaiTaieDinEle - reserved word
+sumOfPalindroms - identifier
+: - separator
+aziMaSimtIntreg - reserved word
+incaOVariabilaMaiTaieDinEle - reserved word
+noOfPalindroms - identifier
+: - separator
+aziMaSimtIntreg - reserved word
+incaOVariabilaMaiTaieDinEle - reserved word
+sumOfNonPalindroms - identifier
+: - separator
+aziMaSimtIntreg - reserved word
+mergiBineCaTurbosuflanta - reserved word
+( - separator
+incaOVariabilaMaiTaieDinEle - reserved word
+i - identifier
+= - operator
+0 - int constant
+; - separator
+i - identifier
+<= - operator
+n - identifier
+-1 - int constant
+; - separator
+i - identifier
++ - operator
++ - operator
+) - separator
+: - separator
+readDirectFromTheMysticalLandOfBarladia - reserved word
+( - separator
+array - identifier
+[ - separator
+i - identifier
+] - separator
+) - separator
+dacaSuntVaiMortiiMei - reserved word
+( - separator
+array - identifier
+[ - separator
+i - identifier
+] - separator
+< - operator
+0 - int constant
+) - separator
+: - separator
+array - identifier
+[ - separator
+i - identifier
+] - separator
+= - operator
+- - operator
+array - identifier
+[ - separator
+i - identifier
+] - separator
+atatSAPutut - reserved word
+incaOVariabilaMaiTaieDinEle - reserved word
+numberCopy - identifier
+: - separator
+aziMaSimtIntreg - reserved word
+= - operator
+array - identifier
+[ - separator
+i - identifier
+] - separator
+incaOVariabilaMaiTaieDinEle - reserved word
+newNumber - identifier
+: - separator
+aziMaSimtIntreg - reserved word
+= - operator
+0 - int constant
+catTimpNuAmDraci - reserved word
+( - separator
+numberCopy - identifier
+!= - operator
+0 - int constant
+) - separator
+: - separator
+newNumber - identifier
+= - operator
+newNumber - identifier
+* - operator
+10 - int constant
++ - operator
+numberCopy - identifier
+% - operator
+10 - int constant
+numberCopy - identifier
+= - operator
+numberCopy - identifier
+/ - operator
+10 - int constant
+atatSAPutut - reserved word
+dacaSuntVaiMortiiMei - reserved word
+( - separator
+newNumber - identifier
+== - operator
+array - identifier
+[ - separator
+i - identifier
+] - separator
+) - separator
+: - separator
+sumOfPalindroms - identifier
++ - operator
+= - operator
+array - identifier
+[ - separator
+i - identifier
+] - separator
+noOfPalindroms - identifier
+sorryIJustWorkHere - reserved word
+: - separator
+sumOfNonPalindroms - identifier
++ - operator
+= - operator
+array - identifier
+[ - separator
+i - identifier
+] - separator
+atatSAPutut - reserved word
+atatSAPutut - reserved word
+incaOVariabilaMaiTaieDinEle - reserved word
+average - identifier
+: - separator
+aziImiDaCuVirgula - reserved word
+average - identifier
+= - operator
+sumOfPalindroms - identifier
+/ - operator
+noOfPalindroms - identifier
+printOffendingCommand - reserved word
+( - separator
+"The average of the palindrome numbers is: " - str constant
+, - separator
+average - identifier
+) - separator
+printOffendingCommand - reserved word
+( - separator
+"The sum of palindrome numbers is: " - str constant
+, - separator
+sumOfNonPalindroms - identifier
+) - separator
+atatSAPutut - reserved word

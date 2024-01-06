@@ -1,0 +1,73 @@
+mareFunctie - reserved word
+bunaDimineataDragiBarladeni - reserved word
+( - separator
+) - separator
+: - separator
+incaOVariabilaMaiTaieDinEle - reserved word
+array - identifier
+: - separator
+aziMaSimtCuListeIntregi - reserved word
+[ - separator
+] - separator
+incaOVariabilaMaiTaieDinEle - reserved word
+n - identifier
+: - separator
+aziMaSimtIntreg - reserved word
+incaOVariabilaMaiTaieDinEle - reserved word
+sum - identifier
+: - separator
+aziMaSimtIntreg - reserved word
+incaOVariabilaMaiTaieDinEle - reserved word
+average - identifier
+: - separator
+aziImiDaCuVirgula - reserved word
+readDirectFromTheMysticalLandOfBarladia - reserved word
+( - separator
+n - identifier
+) - separator
+mergiBineCaTurbosuflanta - reserved word
+( - separator
+incaOVariabilaMaiTaieDinEle - reserved word
+i - identifier
+= - operator
+0 - int constant
+; - separator
+i - identifier
+<= - operator
+n - identifier
+-1 - int constant
+; - separator
+i - identifier
++ - operator
++ - operator
+) - separator
+: - separator
+readDirectFromTheMysticalLandOfBarladia - reserved word
+( - separator
+array - identifier
+[ - separator
+i - identifier
+] - separator
+) - separator
+sum - identifier
+: - separator
+aziMaSimtIntreg - reserved word
++ - operator
+= - operator
+array - identifier
+[ - separator
+i - identifier
+] - separator
+atatSAPutut - reserved word
+average - identifier
+= - operator
+sum - identifier
+/ - operator
+n - identifier
+printOffendingCommand - reserved word
+( - separator
+"The average is: " - str constant
+, - separator
+average - identifier
+) - separator
+atatSAPutut - reserved word
