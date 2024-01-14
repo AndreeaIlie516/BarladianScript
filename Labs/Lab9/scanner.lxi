@@ -1,0 +1,96 @@
+%{
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int lines = 1;
+%}
+
+%option noyywrap
+%option caseless
+
+LETTER          [a-zA-Z_]
+DIGIT           [0-9]
+NON_ZERO_DIGIT  [1-9]
+SYMBOL          [-_ ,.:;!@#$%^&*()+=<>?\/]
+INT_CONSTANT    [+-]?{NON_ZERO_DIGIT}{DIGIT}*|0
+STRING_CONSTANT (\"({LETTER}|{DIGIT}|_|{SYMBOL})*\")
+IDENTIFIER      {LETTER}({LETTER}|{DIGIT})*
+BAD_IDENTIFIER  ({DIGIT})+({LETTER})+({LETTER}|{DIGIT})*
+COMMENT		    ("/*"[^*]*"*/")|("//".*)
+
+%%
+
+[ \t]+ {}
+[\n]+ {++lines;}
+
+{COMMENT} {}
+
+"mareFunctie"                                   { printf("%s - reserved word\n", yytext); return FUNCTION; }
+"bunaDimineataDragiBarladeni"                   { printf("%s - reserved word\n", yytext); return MAIN; }
+"incaOVariabilaMaiTaieDinEle"                   { printf("%s - reserved word\n", yytext); return VAR; }
+"incaOConstantaMaiTaieDinEle"                   { printf("%s - reserved word\n", yytext); return CONST; }
+"readDirectFromTheMysticalLandOfBarladia"       { printf("%s - reserved word\n", yytext); return READ; }
+"printOffendingCommand"                         { printf("%s - reserved word\n", yytext); return PRINT; }
+"dacaSuntVaiMortiiMei"                          { printf("%s - reserved word\n", yytext); return IF; }
+"sorryIJustWorkHere"                            { printf("%s - reserved word\n", yytext); return ELSE; }
+"catTimpNuAmDraci"                              { printf("%s - reserved word\n", yytext); return WHILE; }
+"mergiBineCaTurbosuflanta"                      { printf("%s - reserved word\n", yytext); return FOR; }
+"atatSAPutut"                                   { printf("%s - reserved word\n", yytext); return END; }
+"returneazaBugNou"                              { printf("%s - reserved word\n", yytext); return RETURN; }
+
+aziMaSimtIntreg             { printf("%s - reserved word\n", yytext); return INT; }
+aziImiDaCuVirgula           { printf("%s - reserved word\n", yytext); return FLOAT; }
+aziMaSimtText               { printf("%s - reserved word\n", yytext); return STRING; }
+aziMaSimtCaracter           { printf("%s - reserved word\n", yytext); return CHAR; }
+aziMaSimtCuListeIntregi     { printf("%s - reserved word\n", yytext); return INTARRAY; }
+aziImiDaListeCuVirgula      { printf("%s - reserved word\n", yytext); return FLOATARRAY; }
+aziMaSimtCuListeText        { printf("%s - reserved word\n", yytext); return STRINGARRAY;}
+aziMaSimtCuListeCaracter    { printf("%s - reserved word\n", yytext); return CHARARRAY}
+
+"+"  { printf("%s - operator\n", yytext); return PLUS; }
+"-"  { printf("%s - operator\n", yytext); return MINUS; }
+"*"  { printf("%s - operator\n", yytext); return TIMES; }
+"/"  { printf("%s - operator\n", yytext); return DIV; }
+"%"  { printf("%s - operator\n", yytext); return MOD; }
+"="  { printf("%s - operator\n", yytext); return EQ; }
+">"  { printf("%s - operator\n", yytext); return BIGGER; }
+">=" { printf("%s - operator\n", yytext); return BIGGEREQ; }
+"<"  { printf("%s - operator\n", yytext); return LESS; }
+"<=" { printf("%s - operator\n", yytext); return LESSEQ; }
+"==" { printf("%s - operator\n", yytext); return EQQ; }
+"!=" { printf("%s - operator\n", yytext); return NEQ; }
+"&&" { printf("%s - operator\n", yytext); return AND; }
+"||" { printf("%s - operator\n", yytext); return OR; }
+"!"  { printf("%s - operator\n", yytext); return NOT; }
+
+":" { printf("%s - separator\n", yytext); return COLON; }
+";" { printf("%s - separator\n", yytext); return SEMICOLON; }
+"(" { printf("%s - separator\n", yytext); return ROUNDBRACKETOPEN}
+")" { printf("%s - separator\n", yytext); return ROUNDBRACKETCLOSE}
+"[" { printf("%s - separator\n", yytext); return SQUAREBRACKETOPEN}
+"]" { printf("%s - separator\n", yytext); return SQUAREBRACKETCLOSE}
+"{" { printf("%s - separator\n", yytext); return CURLYBRACKETOPEN}
+"}" { printf("%s - separator\n", yytext); return CURLYBRACKETCLOSE}
+"," { printf("%s - separator\n", yytext); return COMMA;}
+
+{IDENTIFIER} {printf("%s - identifier\n", yytext); return IDNETIFIER;}
+
+{BAD_IDENTIFIER} {printf("Error at token %s at line %d\n", yytext, lines); return -1;}
+
+{INT_CONSTANT} {printf("%s - int constant\n", yytext); return INTCONSTANT; }
+
+{STRING_CONSTANT} {printf("%s - str constant\n", yytext); return STRINGCONSTANT; }
+
+. {printf("Error at token %s at line %d\n", yytext, lines); return -1;}
+
+%%
+
+int main(int argc, char **argv ) 
+{ 
+    if ( argc > 1 ) 
+    	yyin = fopen(argv[1], "r"); 
+    else 
+    	yyin = stdin;
+    yylex();
+}
