@@ -1,18 +1,17 @@
 mareFunctie bunaDimineataDragiBarladeni():
-    incaOVariabilaMaiTaieDinEle a, b, c: aziMaSimtIntreg
 
     readDirectFromTheMysticalLandOfBarladia(a)
     readDirectFromTheMysticalLandOfBarladia(b)
     readDirectFromTheMysticalLandOfBarladia(c)
 
-    incaOVariabilaMaiTaieDinEle 2sum: aziMaSimtIntreg = a + b    // 2sum cannot be an identifier because it does not follow the rule of identifiers
+    2sum = a + b    // 2sum cannot be an identifier because it does not follow the rule of identifiers
 
-    incaOVariabilaMaiTaieDinEle average: aziImiDaCuVirgula = sum / 2
+    average =  sum / 2
 
     dacaSuntVaiMortiiMei (c > average): 
-        printCommand("The third number, ", c, " is larger than the average, ", average, ".") // reserved word, identifier, separator, operator or constant not found
+        printCommand(c)
     sorryIJustWorkHere:
-        printOffendingCommand("The third number, ", c, " is smaller than the average, ", average, ".")
+        printOffendingCommand(average)
     atatSAPutut
 
 atatSAPutut

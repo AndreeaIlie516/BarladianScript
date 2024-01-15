@@ -6,7 +6,6 @@ mareFunctie bunaDimineataDragiBarladeni ():
     readDirectFromTheMysticalLandOfBarladia(b)
     readDirectFromTheMysticalLandOfBarladia(c)
 
-
     dacaSuntVaiMortiiMei (c > average):
         printOffendingCommand(c)
     sorryIJustWorkHere:

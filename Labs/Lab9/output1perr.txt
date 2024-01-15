@@ -1,0 +1,32 @@
+mareFunctie - reserved word
+bunaDimineataDragiBarladeni - reserved word
+FunctionName -> bunaDimineataDragiBarladeni
+( - separator
+) - separator
+: - separator
+readDirectFromTheMysticalLandOfBarladia - reserved word
+FunctionName -> readDirectFromTheMysticalLandOfBarladia
+( - separator
+a - identifier
+) - separator
+IdentifierList -> IDENTIFIER 
+FunctionCallStatement -> FunctionName (IdentifierList)Statement -> FunctionCallStatement
+readDirectFromTheMysticalLandOfBarladia - reserved word
+FunctionName -> readDirectFromTheMysticalLandOfBarladia
+( - separator
+b - identifier
+) - separator
+IdentifierList -> IDENTIFIER 
+FunctionCallStatement -> FunctionName (IdentifierList)Statement -> FunctionCallStatement
+readDirectFromTheMysticalLandOfBarladia - reserved word
+FunctionName -> readDirectFromTheMysticalLandOfBarladia
+( - separator
+c - identifier
+) - separator
+IdentifierList -> IDENTIFIER 
+FunctionCallStatement -> FunctionName (IdentifierList)Statement -> FunctionCallStatement
+Error at token 2sum at line 5
+Program -> Statement 
+Program -> Statement  Program
+Program -> Statement  Program
+syntax error

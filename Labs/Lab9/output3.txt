@@ -1,0 +1,105 @@
+mareFunctie - reserved word
+bunaDimineataDragiBarladeni - reserved word
+FunctionName -> bunaDimineataDragiBarladeni
+( - separator
+) - separator
+: - separator
+readDirectFromTheMysticalLandOfBarladia - reserved word
+FunctionName -> readDirectFromTheMysticalLandOfBarladia
+( - separator
+n - identifier
+) - separator
+IdentifierList -> IDENTIFIER 
+FunctionCallStatement -> FunctionName (IdentifierList)Statement -> FunctionCallStatement
+i - identifier
+= - operator
+0 - int constant
+NumberExpression -> INTCONSTANT 
+sum - identifier
+Expression -> NumberExpression 
+AssignStatement -> IDENTIFIER = Expression 
+Statement -> DeclareAssignStatement
+= - operator
+0 - int constant
+NumberExpression -> INTCONSTANT 
+catTimpNuAmDraci - reserved word
+Expression -> NumberExpression 
+AssignStatement -> IDENTIFIER = Expression 
+Statement -> DeclareAssignStatement
+( - separator
+i - identifier
+< - operator
+NumberExpression -> IDENTIFIER 
+Expression -> NumberExpression 
+RelationalOperator -> <
+n - identifier
+) - separator
+NumberExpression -> IDENTIFIER 
+Expression -> NumberExpression 
+Condition -> Expression RelationalOperator Expression
+: - separator
+readDirectFromTheMysticalLandOfBarladia - reserved word
+FunctionName -> readDirectFromTheMysticalLandOfBarladia
+( - separator
+x - identifier
+) - separator
+IdentifierList -> IDENTIFIER 
+FunctionCallStatement -> FunctionName (IdentifierList)Statement -> FunctionCallStatement
+sum - identifier
+= - operator
+sum - identifier
++ - operator
+NumberExpression -> IDENTIFIER 
+ArithOp -> + 
+x - identifier
+i - identifier
+NumberExpression -> IDENTIFIER 
+NumberExpression -> NumberExpression ArithOp NumberExpression 
+Expression -> NumberExpression 
+AssignStatement -> IDENTIFIER = Expression 
+Statement -> DeclareAssignStatement
+= - operator
+i - identifier
++ - operator
+NumberExpression -> IDENTIFIER 
+ArithOp -> + 
+1 - int constant
+NumberExpression -> INTCONSTANT 
+atatSAPutut - reserved word
+NumberExpression -> NumberExpression ArithOp NumberExpression 
+Expression -> NumberExpression 
+AssignStatement -> IDENTIFIER = Expression 
+Statement -> DeclareAssignStatement
+Program -> Statement 
+Program -> Statement  Program
+Program -> Statement  Program
+WhileStatement -> catTimpNuAmDraci ( Condition ) : Program atatSAPutut 
+Statement -> WhileStatement
+average - identifier
+= - operator
+sum - identifier
+/ - operator
+NumberExpression -> IDENTIFIER 
+ArithOp -> / 
+n - identifier
+printOffendingCommand - reserved word
+NumberExpression -> IDENTIFIER 
+NumberExpression -> NumberExpression ArithOp NumberExpression 
+Expression -> NumberExpression 
+AssignStatement -> IDENTIFIER = Expression 
+Statement -> DeclareAssignStatement
+FunctionName -> printOffendingCommand
+( - separator
+average - identifier
+) - separator
+IdentifierList -> IDENTIFIER 
+FunctionCallStatement -> FunctionName (IdentifierList)Statement -> FunctionCallStatement
+atatSAPutut - reserved word
+Program -> Statement 
+Program -> Statement  Program
+Program -> Statement  Program
+Program -> Statement  Program
+Program -> Statement  Program
+Program -> Statement  Program
+FunctionDeclarationStatement -> mareFunctie FunctionName () : Program atatSAPututStatement -> FunctionDeclarationStatement
+Program -> Statement 
