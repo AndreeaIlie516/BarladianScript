@@ -1,8 +1,11 @@
 %{
+#include "lexer.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 #define YYDEBUG 1
+
+int yyerror(char *s);
 %}
 
 %token FUNCTION;
@@ -64,13 +67,13 @@
 Program: Statement Program {printf("Program -> Statement  Program\n")} | Statement {printf("Program -> Statement \n")};
 Statement: DeclareVariableStatement {printf("Statement -> DeclareVariableStatement\n");} | DeclareArrayStatement {printf("Statement -> DeclareArrayStatement\n");} | AssignStatement {printf("Statement -> DeclareAssignStatement\n");} | IfStatement {printf("Statement -> IfStatement\n");} | WhileStatement {printf("Statement -> WhileStatement\n");} | ForStatement {printf("Statement -> ForStatement\n");} | FunctionDeclarationStatement {printf("Statement -> FunctionDeclarationStatement\n");} | FunctionCallStatement {printf("Statement -> FunctionCallStatement\n");} | ReturnStatement {printf("Statement -> ReturnStatement\n");} ;
 DeclareVariableStatement: VAR IdentifierList : Type {printf("DeclareVariableStatement -> incaOVariabilaMaiTaieDinEle IdentifierList : Type\n");} ;
-IdentifierList: IDENTIFIER {print("IdentifierList -> IDENTIFIER \n");} | IDENTIFIER COMMA IdentifierList {print("IdentifierList -> IDENTIFIER \n");}
-Type: INT {print("Type -> aziMaSimtIntreg \n");} | FLOAT {print("Type -> aziImiDaCuVirgula \n");} | STRING {print("Type -> aziMaSimtText \n");} | CHAR {print("Type -> aziMaSimtCaracter \n");} ;
+IdentifierList: IDENTIFIER {printf("IdentifierList -> IDENTIFIER \n");} | IDENTIFIER COMMA IdentifierList {printf("IdentifierList -> IDENTIFIER \n");}
+Type: INT {printf("Type -> aziMaSimtIntreg \n");} | FLOAT {printf("Type -> aziImiDaCuVirgula \n");} | STRING {printf("Type -> aziMaSimtText \n");} | CHAR {printf("Type -> aziMaSimtCaracter \n");} ;
 DeclareArrayStatement: VAR IdentifierList : ArrayType SQUAREBRACKETOPEN SQUAREBRACKETCLOSE {printf("DeclareArrayStatement -> incaOVariabilaMaiTaieDinEle IdentifierList : ArrayType[]\n");} ;
-ArrayType: INTARRAY {print("Type -> aziMaSimtCuListeIntregi \n");} | FLOATARRAY {print("Type -> aziImiDaListeCuVirgula \n");} | STRINGARRAY {print("Type -> aziMaSimtCuListeText \n");} | CHARARRAY {print("Type -> aziMaSimtCuListeCaracter \n");} ;
+ArrayType: INTARRAY {printf("Type -> aziMaSimtCuListeIntregi \n");} | FLOATARRAY {printf("Type -> aziImiDaListeCuVirgula \n");} | STRINGARRAY {printf("Type -> aziMaSimtCuListeText \n");} | CHARARRAY {printf("Type -> aziMaSimtCuListeCaracter \n");} ;
 AssignStatement: IDENTIFIER EQ Expression {printf("AssignStatement -> IDENTIFIER = Expression \n");} | ArrayAccessStatement EQ Expression {printf("AssignStatement -> ArrayAccessStatement = Expression \n");};
 Expression: NumberExpression {printf("Expression -> NumberExpression \n");} | StringExpression {printf("Expression -> StringExpression \n");} ;
-ArithOp: PLUS {printf("ArithOp -> + \n");} | MINUS {printf("ArithOp -> - \n");} | TIMES {printf("Arith -> * \n");} | DIV {printf("ArithOp -> / \n");} | MOD {printf("ArithOp -> % \n");} ;
+ArithOp: PLUS {printf("ArithOp -> + \n");} | MINUS {printf("ArithOp -> - \n");} | TIMES {printf("Arith -> * \n");} | DIV {printf("ArithOp -> / \n");} | MOD {printf("ArithOp -> \% \n");} ;
 LogicalOp: AND {printf("LogicalOp -> && \n");} | OR {printf("LogicalOp -> || \n");}
 NegationOp: NOT
 RelationalOperator : EQQ {printf("RelationalOperator -> ==\n");} | LESS {printf("RelationalOperator -> <\n");} | LESSEQ {printf("RelationalOperator -> <=\n");} | BIGGER {printf("RelationalOperator -> >\n");} | BIGGEREQ {printf("RelationalOperator -> >=\n");} ;
@@ -91,14 +94,15 @@ ReturnStatement: RETURN {printf("ReturnStatement -> returneazaBugNou\n");} ;
 
 %%
 
-yyerror(char *s)
+int yyerror(char *s)
 {	
 	printf("%s\n",s);
+	return 0;
 }
 
 extern FILE *yyin;
 
-main(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	if(argc>1) yyin =  fopen(argv[1],"r");
 	if(!yyparse()) fprintf(stderr, "\tOK\n");

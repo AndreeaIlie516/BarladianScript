@@ -170,10 +170,13 @@
 /* Copy the first part of user declarations.  */
 #line 1 "parser.y"
 
+#include "lexer.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 #define YYDEBUG 1
+
+int yyerror(char *s);
 
 
 /* Enabling traces.  */
@@ -207,7 +210,7 @@ typedef int YYSTYPE;
 
 
 /* Line 216 of yacc.c.  */
-#line 211 "parser.tab.c"
+#line 214 "parser.tab.c"
 
 #ifdef short
 # undef short
@@ -518,13 +521,13 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    64,    64,    64,    65,    65,    65,    65,    65,    65,
-      65,    65,    65,    66,    66,    67,    67,    68,    68,    68,
-      68,    69,    69,    70,    70,    70,    70,    71,    71,    72,
-      72,    73,    73,    73,    73,    73,    76,    76,    76,    76,
-      76,    77,    78,    79,    80,    81,    81,    81,    81,    81,
-      81,    82,    84,    84,    85,    86,    87,    88,    89,    89,
-      89,    90
+       0,    67,    67,    67,    68,    68,    68,    68,    68,    68,
+      68,    68,    68,    69,    69,    70,    70,    71,    71,    71,
+      71,    72,    72,    73,    73,    73,    73,    74,    74,    75,
+      75,    76,    76,    76,    76,    76,    79,    79,    79,    79,
+      79,    80,    81,    82,    83,    84,    84,    84,    84,    84,
+      84,    85,    87,    87,    88,    89,    90,    91,    92,    92,
+      92,    93
 };
 #endif
 
@@ -1515,298 +1518,298 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 64 "parser.y"
+#line 67 "parser.y"
     {printf("Program -> Statement  Program\n");}
     break;
 
   case 3:
-#line 64 "parser.y"
+#line 67 "parser.y"
     {printf("Program -> Statement \n");}
     break;
 
   case 4:
-#line 65 "parser.y"
+#line 68 "parser.y"
     {printf("Statement -> DeclareVariableStatement\n");;}
     break;
 
   case 5:
-#line 65 "parser.y"
+#line 68 "parser.y"
     {printf("Statement -> DeclareArrayStatement\n");;}
     break;
 
   case 6:
-#line 65 "parser.y"
+#line 68 "parser.y"
     {printf("Statement -> DeclareAssignStatement\n");;}
     break;
 
   case 7:
-#line 65 "parser.y"
+#line 68 "parser.y"
     {printf("Statement -> IfStatement\n");;}
     break;
 
   case 8:
-#line 65 "parser.y"
+#line 68 "parser.y"
     {printf("Statement -> WhileStatement\n");;}
     break;
 
   case 9:
-#line 65 "parser.y"
+#line 68 "parser.y"
     {printf("Statement -> ForStatement\n");;}
     break;
 
   case 10:
-#line 65 "parser.y"
+#line 68 "parser.y"
     {printf("Statement -> FunctionDeclarationStatement\n");;}
     break;
 
   case 11:
-#line 65 "parser.y"
+#line 68 "parser.y"
     {printf("Statement -> FunctionCallStatement\n");;}
     break;
 
   case 12:
-#line 65 "parser.y"
+#line 68 "parser.y"
     {printf("Statement -> ReturnStatement\n");;}
     break;
 
   case 14:
-#line 66 "parser.y"
+#line 69 "parser.y"
     {printf("DeclareVariableStatement -> incaOVariabilaMaiTaieDinEle IdentifierList : Type\n");;}
     break;
 
   case 15:
-#line 67 "parser.y"
-    {print("IdentifierList -> IDENTIFIER \n");;}
+#line 70 "parser.y"
+    {printf("IdentifierList -> IDENTIFIER \n");;}
     break;
 
   case 16:
-#line 67 "parser.y"
-    {print("IdentifierList -> IDENTIFIER \n");;}
+#line 70 "parser.y"
+    {printf("IdentifierList -> IDENTIFIER \n");;}
     break;
 
   case 17:
-#line 68 "parser.y"
-    {print("Type -> aziMaSimtIntreg \n");;}
+#line 71 "parser.y"
+    {printf("Type -> aziMaSimtIntreg \n");;}
     break;
 
   case 18:
-#line 68 "parser.y"
-    {print("Type -> aziImiDaCuVirgula \n");;}
+#line 71 "parser.y"
+    {printf("Type -> aziImiDaCuVirgula \n");;}
     break;
 
   case 19:
-#line 68 "parser.y"
-    {print("Type -> aziMaSimtText \n");;}
+#line 71 "parser.y"
+    {printf("Type -> aziMaSimtText \n");;}
     break;
 
   case 20:
-#line 68 "parser.y"
-    {print("Type -> aziMaSimtCaracter \n");;}
+#line 71 "parser.y"
+    {printf("Type -> aziMaSimtCaracter \n");;}
     break;
 
   case 22:
-#line 69 "parser.y"
+#line 72 "parser.y"
     {printf("DeclareArrayStatement -> incaOVariabilaMaiTaieDinEle IdentifierList : ArrayType[]\n");;}
     break;
 
   case 23:
-#line 70 "parser.y"
-    {print("Type -> aziMaSimtCuListeIntregi \n");;}
+#line 73 "parser.y"
+    {printf("Type -> aziMaSimtCuListeIntregi \n");;}
     break;
 
   case 24:
-#line 70 "parser.y"
-    {print("Type -> aziImiDaListeCuVirgula \n");;}
+#line 73 "parser.y"
+    {printf("Type -> aziImiDaListeCuVirgula \n");;}
     break;
 
   case 25:
-#line 70 "parser.y"
-    {print("Type -> aziMaSimtCuListeText \n");;}
+#line 73 "parser.y"
+    {printf("Type -> aziMaSimtCuListeText \n");;}
     break;
 
   case 26:
-#line 70 "parser.y"
-    {print("Type -> aziMaSimtCuListeCaracter \n");;}
+#line 73 "parser.y"
+    {printf("Type -> aziMaSimtCuListeCaracter \n");;}
     break;
 
   case 27:
-#line 71 "parser.y"
+#line 74 "parser.y"
     {printf("AssignStatement -> IDENTIFIER = Expression \n");;}
     break;
 
   case 28:
-#line 71 "parser.y"
+#line 74 "parser.y"
     {printf("AssignStatement -> ArrayAccessStatement = Expression \n");;}
     break;
 
   case 29:
-#line 72 "parser.y"
+#line 75 "parser.y"
     {printf("Expression -> NumberExpression \n");;}
     break;
 
   case 30:
-#line 72 "parser.y"
+#line 75 "parser.y"
     {printf("Expression -> StringExpression \n");;}
     break;
 
   case 31:
-#line 73 "parser.y"
+#line 76 "parser.y"
     {printf("ArithOp -> + \n");;}
     break;
 
   case 32:
-#line 73 "parser.y"
+#line 76 "parser.y"
     {printf("ArithOp -> - \n");;}
     break;
 
   case 33:
-#line 73 "parser.y"
+#line 76 "parser.y"
     {printf("Arith -> * \n");;}
     break;
 
   case 34:
-#line 73 "parser.y"
+#line 76 "parser.y"
     {printf("ArithOp -> / \n");;}
     break;
 
   case 35:
-#line 73 "parser.y"
-    {printf("ArithOp -> % \n");;}
+#line 76 "parser.y"
+    {printf("ArithOp -> \% \n");;}
     break;
 
   case 36:
-#line 76 "parser.y"
+#line 79 "parser.y"
     {printf("RelationalOperator -> ==\n");;}
     break;
 
   case 37:
-#line 76 "parser.y"
+#line 79 "parser.y"
     {printf("RelationalOperator -> <\n");;}
     break;
 
   case 38:
-#line 76 "parser.y"
+#line 79 "parser.y"
     {printf("RelationalOperator -> <=\n");;}
     break;
 
   case 39:
-#line 76 "parser.y"
+#line 79 "parser.y"
     {printf("RelationalOperator -> >\n");;}
     break;
 
   case 40:
-#line 76 "parser.y"
+#line 79 "parser.y"
     {printf("RelationalOperator -> >=\n");;}
     break;
 
   case 41:
-#line 77 "parser.y"
+#line 80 "parser.y"
     {printf("Condition -> Expression RelationalOperator Expression\n");;}
     break;
 
   case 42:
-#line 78 "parser.y"
+#line 81 "parser.y"
     {printf("Condition -> Expression RelationalOperator Expression && Expression RelationalOperator Expression\n");;}
     break;
 
   case 43:
-#line 79 "parser.y"
+#line 82 "parser.y"
     {printf("Condition -> Expression RelationalOperator Expression || Expression RelationalOperator Expression\n");;}
     break;
 
   case 44:
-#line 80 "parser.y"
+#line 83 "parser.y"
     {printf("ArrayAccessStatement -> IDENTIFICATOR[IDENTIFICATOR]\n");;}
     break;
 
   case 45:
-#line 81 "parser.y"
+#line 84 "parser.y"
     {printf("NumberExpression -> INTCONSTANT \n");;}
     break;
 
   case 46:
-#line 81 "parser.y"
+#line 84 "parser.y"
     {printf("NumberExpression -> IDENTIFIER \n");;}
     break;
 
   case 47:
-#line 81 "parser.y"
+#line 84 "parser.y"
     {printf("NumberExpression -> ArrayAccessStatement \n");;}
     break;
 
   case 48:
-#line 81 "parser.y"
+#line 84 "parser.y"
     {printf("NumberExpression -> NumberExpression ArithOp NumberExpression \n");;}
     break;
 
   case 49:
-#line 81 "parser.y"
+#line 84 "parser.y"
     {printf("NumberExpression -> ( NumberExpression ArithOp NumberExpression ) \n");;}
     break;
 
   case 50:
-#line 81 "parser.y"
+#line 84 "parser.y"
     {printf("NumberExpression -> FunctionCallStatement \n");;}
     break;
 
   case 51:
-#line 82 "parser.y"
+#line 85 "parser.y"
     {printf("StringExpression -> STRINGCONSTANT \n");;}
     break;
 
   case 52:
-#line 84 "parser.y"
+#line 87 "parser.y"
     {printf("IfStatement -> dacaSuntVaiMortiiMei ( Condition ) : Program atatSAPutut \n");;}
     break;
 
   case 53:
-#line 84 "parser.y"
+#line 87 "parser.y"
     {printf("IfStatement -> dacaSuntVaiMortiiMei ( Condition ) : Program sorryIJustWorkHere : Program atatSAPutut \n");;}
     break;
 
   case 54:
-#line 85 "parser.y"
+#line 88 "parser.y"
     {printf("WhileStatement -> catTimpNuAmDraci ( Condition ) : Program atatSAPutut \n");;}
     break;
 
   case 55:
-#line 86 "parser.y"
+#line 89 "parser.y"
     {printf("ForStatement -> mergiBineCaTurbosuflanta ( AssignStatement; Condition; NumberExpression ) : Program atatSAPutut \n");;}
     break;
 
   case 56:
-#line 87 "parser.y"
+#line 90 "parser.y"
     {printf("FunctionDeclarationStatement -> mareFunctie FunctionName () : Program atatSAPutut");}
     break;
 
   case 57:
-#line 88 "parser.y"
+#line 91 "parser.y"
     {printf("FunctionCallStatement -> FunctionName (IdentifierList)");}
     break;
 
   case 58:
-#line 89 "parser.y"
+#line 92 "parser.y"
     {printf("FunctionName -> bunaDimineataDragiBarladeni\n");;}
     break;
 
   case 59:
-#line 89 "parser.y"
+#line 92 "parser.y"
     {printf("FunctionName -> readDirectFromTheMysticalLandOfBarladia\n");;}
     break;
 
   case 60:
-#line 89 "parser.y"
+#line 92 "parser.y"
     {printf("FunctionName -> printOffendingCommand\n");;}
     break;
 
   case 61:
-#line 90 "parser.y"
+#line 93 "parser.y"
     {printf("ReturnStatement -> returneazaBugNou\n");;}
     break;
 
 
 /* Line 1267 of yacc.c.  */
-#line 1810 "parser.tab.c"
+#line 1813 "parser.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -2020,17 +2023,18 @@ yyreturn:
 }
 
 
-#line 92 "parser.y"
+#line 95 "parser.y"
 
 
-yyerror(char *s)
+int yyerror(char *s)
 {	
 	printf("%s\n",s);
+	return 0;
 }
 
 extern FILE *yyin;
 
-main(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	if(argc>1) yyin =  fopen(argv[1],"r");
 	if(!yyparse()) fprintf(stderr, "\tOK\n");

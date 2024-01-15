@@ -45,9 +45,9 @@ mareFunctie bunaDimineataDragiBarladeni():
 
     average = sumOfPalindroms / noOfPalindroms
 
-    printOffendingCommand ("The average of the palindrome numbers is: ", average)
+    printOffendingCommand (average)
 
-    printOffendingCommand ("The sum of palindrome numbers is: ", sumOfNonPalindroms)
+    printOffendingCommand (sumOfNonPalindroms)
     
 atatSAPutut
 

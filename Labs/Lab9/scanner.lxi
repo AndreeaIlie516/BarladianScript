@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "parser.tab.h"
+
 
 int lines = 1;
 %}
@@ -46,7 +48,7 @@ aziMaSimtCaracter           { printf("%s - reserved word\n", yytext); return CHA
 aziMaSimtCuListeIntregi     { printf("%s - reserved word\n", yytext); return INTARRAY; }
 aziImiDaListeCuVirgula      { printf("%s - reserved word\n", yytext); return FLOATARRAY; }
 aziMaSimtCuListeText        { printf("%s - reserved word\n", yytext); return STRINGARRAY;}
-aziMaSimtCuListeCaracter    { printf("%s - reserved word\n", yytext); return CHARARRAY}
+aziMaSimtCuListeCaracter    { printf("%s - reserved word\n", yytext); return CHARARRAY; }
 
 "+"  { printf("%s - operator\n", yytext); return PLUS; }
 "-"  { printf("%s - operator\n", yytext); return MINUS; }
@@ -66,15 +68,15 @@ aziMaSimtCuListeCaracter    { printf("%s - reserved word\n", yytext); return CHA
 
 ":" { printf("%s - separator\n", yytext); return COLON; }
 ";" { printf("%s - separator\n", yytext); return SEMICOLON; }
-"(" { printf("%s - separator\n", yytext); return ROUNDBRACKETOPEN}
-")" { printf("%s - separator\n", yytext); return ROUNDBRACKETCLOSE}
-"[" { printf("%s - separator\n", yytext); return SQUAREBRACKETOPEN}
-"]" { printf("%s - separator\n", yytext); return SQUAREBRACKETCLOSE}
-"{" { printf("%s - separator\n", yytext); return CURLYBRACKETOPEN}
-"}" { printf("%s - separator\n", yytext); return CURLYBRACKETCLOSE}
-"," { printf("%s - separator\n", yytext); return COMMA;}
+"(" { printf("%s - separator\n", yytext); return ROUNDBRACKETOPEN; }
+")" { printf("%s - separator\n", yytext); return ROUNDBRACKETCLOSE; }
+"[" { printf("%s - separator\n", yytext); return SQUAREBRACKETOPEN; }
+"]" { printf("%s - separator\n", yytext); return SQUAREBRACKETCLOSE; }
+"{" { printf("%s - separator\n", yytext); return CURLYBRACKETOPEN; }
+"}" { printf("%s - separator\n", yytext); return CURLYBRACKETCLOSE; }
+"," { printf("%s - separator\n", yytext); return COMMA; }
 
-{IDENTIFIER} {printf("%s - identifier\n", yytext); return IDNETIFIER;}
+{IDENTIFIER} {printf("%s - identifier\n", yytext); return IDENTIFIER;}
 
 {BAD_IDENTIFIER} {printf("Error at token %s at line %d\n", yytext, lines); return -1;}
 
@@ -85,12 +87,3 @@ aziMaSimtCuListeCaracter    { printf("%s - reserved word\n", yytext); return CHA
 . {printf("Error at token %s at line %d\n", yytext, lines); return -1;}
 
 %%
-
-int main(int argc, char **argv ) 
-{ 
-    if ( argc > 1 ) 
-    	yyin = fopen(argv[1], "r"); 
-    else 
-    	yyin = stdin;
-    yylex();
-}

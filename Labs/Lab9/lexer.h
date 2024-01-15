@@ -468,7 +468,7 @@ extern int yylex (void);
 #undef yyTABLES_NAME
 #endif
 
-#line 87 "scanner.lxi"
+#line 89 "scanner.lxi"
 
 
 #line 474 "lexer.h"

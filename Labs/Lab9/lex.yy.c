@@ -767,10 +767,12 @@ char *yytext;
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "parser.tab.h"
+
 
 int lines = 1;
-#line 772 "lex.yy.c"
-#line 773 "lex.yy.c"
+#line 774 "lex.yy.c"
+#line 775 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -987,10 +989,10 @@ YY_DECL
 		}
 
 	{
-#line 22 "scanner.lxi"
+#line 24 "scanner.lxi"
 
 
-#line 993 "lex.yy.c"
+#line 995 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -1049,272 +1051,272 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 24 "scanner.lxi"
+#line 26 "scanner.lxi"
 {}
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 25 "scanner.lxi"
+#line 27 "scanner.lxi"
 {++lines;}
 	YY_BREAK
 case 3:
 /* rule 3 can match eol */
 YY_RULE_SETUP
-#line 27 "scanner.lxi"
+#line 29 "scanner.lxi"
 {}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 29 "scanner.lxi"
+#line 31 "scanner.lxi"
 { printf("%s - reserved word\n", yytext); return FUNCTION; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 30 "scanner.lxi"
+#line 32 "scanner.lxi"
 { printf("%s - reserved word\n", yytext); return MAIN; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 31 "scanner.lxi"
+#line 33 "scanner.lxi"
 { printf("%s - reserved word\n", yytext); return VAR; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 32 "scanner.lxi"
+#line 34 "scanner.lxi"
 { printf("%s - reserved word\n", yytext); return CONST; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 33 "scanner.lxi"
+#line 35 "scanner.lxi"
 { printf("%s - reserved word\n", yytext); return READ; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 34 "scanner.lxi"
+#line 36 "scanner.lxi"
 { printf("%s - reserved word\n", yytext); return PRINT; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 35 "scanner.lxi"
+#line 37 "scanner.lxi"
 { printf("%s - reserved word\n", yytext); return IF; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 36 "scanner.lxi"
+#line 38 "scanner.lxi"
 { printf("%s - reserved word\n", yytext); return ELSE; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 37 "scanner.lxi"
+#line 39 "scanner.lxi"
 { printf("%s - reserved word\n", yytext); return WHILE; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 38 "scanner.lxi"
+#line 40 "scanner.lxi"
 { printf("%s - reserved word\n", yytext); return FOR; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 39 "scanner.lxi"
+#line 41 "scanner.lxi"
 { printf("%s - reserved word\n", yytext); return END; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 40 "scanner.lxi"
+#line 42 "scanner.lxi"
 { printf("%s - reserved word\n", yytext); return RETURN; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 42 "scanner.lxi"
+#line 44 "scanner.lxi"
 { printf("%s - reserved word\n", yytext); return INT; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 43 "scanner.lxi"
+#line 45 "scanner.lxi"
 { printf("%s - reserved word\n", yytext); return FLOAT; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 44 "scanner.lxi"
+#line 46 "scanner.lxi"
 { printf("%s - reserved word\n", yytext); return STRING; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 45 "scanner.lxi"
+#line 47 "scanner.lxi"
 { printf("%s - reserved word\n", yytext); return CHAR; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 46 "scanner.lxi"
+#line 48 "scanner.lxi"
 { printf("%s - reserved word\n", yytext); return INTARRAY; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 47 "scanner.lxi"
+#line 49 "scanner.lxi"
 { printf("%s - reserved word\n", yytext); return FLOATARRAY; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 48 "scanner.lxi"
+#line 50 "scanner.lxi"
 { printf("%s - reserved word\n", yytext); return STRINGARRAY;}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 49 "scanner.lxi"
-{ printf("%s - reserved word\n", yytext); return CHARARRAY}
+#line 51 "scanner.lxi"
+{ printf("%s - reserved word\n", yytext); return CHARARRAY; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 51 "scanner.lxi"
+#line 53 "scanner.lxi"
 { printf("%s - operator\n", yytext); return PLUS; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 52 "scanner.lxi"
+#line 54 "scanner.lxi"
 { printf("%s - operator\n", yytext); return MINUS; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 53 "scanner.lxi"
+#line 55 "scanner.lxi"
 { printf("%s - operator\n", yytext); return TIMES; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 54 "scanner.lxi"
+#line 56 "scanner.lxi"
 { printf("%s - operator\n", yytext); return DIV; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 55 "scanner.lxi"
+#line 57 "scanner.lxi"
 { printf("%s - operator\n", yytext); return MOD; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 56 "scanner.lxi"
+#line 58 "scanner.lxi"
 { printf("%s - operator\n", yytext); return EQ; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 57 "scanner.lxi"
+#line 59 "scanner.lxi"
 { printf("%s - operator\n", yytext); return BIGGER; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 58 "scanner.lxi"
+#line 60 "scanner.lxi"
 { printf("%s - operator\n", yytext); return BIGGEREQ; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 59 "scanner.lxi"
+#line 61 "scanner.lxi"
 { printf("%s - operator\n", yytext); return LESS; }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 60 "scanner.lxi"
+#line 62 "scanner.lxi"
 { printf("%s - operator\n", yytext); return LESSEQ; }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 61 "scanner.lxi"
+#line 63 "scanner.lxi"
 { printf("%s - operator\n", yytext); return EQQ; }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 62 "scanner.lxi"
+#line 64 "scanner.lxi"
 { printf("%s - operator\n", yytext); return NEQ; }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 63 "scanner.lxi"
+#line 65 "scanner.lxi"
 { printf("%s - operator\n", yytext); return AND; }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 64 "scanner.lxi"
+#line 66 "scanner.lxi"
 { printf("%s - operator\n", yytext); return OR; }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 65 "scanner.lxi"
+#line 67 "scanner.lxi"
 { printf("%s - operator\n", yytext); return NOT; }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 67 "scanner.lxi"
+#line 69 "scanner.lxi"
 { printf("%s - separator\n", yytext); return COLON; }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 68 "scanner.lxi"
+#line 70 "scanner.lxi"
 { printf("%s - separator\n", yytext); return SEMICOLON; }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 69 "scanner.lxi"
-{ printf("%s - separator\n", yytext); return ROUNDBRACKETOPEN}
+#line 71 "scanner.lxi"
+{ printf("%s - separator\n", yytext); return ROUNDBRACKETOPEN; }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 70 "scanner.lxi"
-{ printf("%s - separator\n", yytext); return ROUNDBRACKETCLOSE}
+#line 72 "scanner.lxi"
+{ printf("%s - separator\n", yytext); return ROUNDBRACKETCLOSE; }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 71 "scanner.lxi"
-{ printf("%s - separator\n", yytext); return SQUAREBRACKETOPEN}
+#line 73 "scanner.lxi"
+{ printf("%s - separator\n", yytext); return SQUAREBRACKETOPEN; }
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 72 "scanner.lxi"
-{ printf("%s - separator\n", yytext); return SQUAREBRACKETCLOSE}
+#line 74 "scanner.lxi"
+{ printf("%s - separator\n", yytext); return SQUAREBRACKETCLOSE; }
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 73 "scanner.lxi"
-{ printf("%s - separator\n", yytext); return CURLYBRACKETOPEN}
+#line 75 "scanner.lxi"
+{ printf("%s - separator\n", yytext); return CURLYBRACKETOPEN; }
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 74 "scanner.lxi"
-{ printf("%s - separator\n", yytext); return CURLYBRACKETCLOSE}
+#line 76 "scanner.lxi"
+{ printf("%s - separator\n", yytext); return CURLYBRACKETCLOSE; }
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 75 "scanner.lxi"
-{ printf("%s - separator\n", yytext); return COMMA;}
+#line 77 "scanner.lxi"
+{ printf("%s - separator\n", yytext); return COMMA; }
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 77 "scanner.lxi"
-{printf("%s - identifier\n", yytext); return IDNETIFIER;}
+#line 79 "scanner.lxi"
+{printf("%s - identifier\n", yytext); return IDENTIFIER;}
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 79 "scanner.lxi"
+#line 81 "scanner.lxi"
 {printf("Error at token %s at line %d\n", yytext, lines); return -1;}
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 81 "scanner.lxi"
+#line 83 "scanner.lxi"
 {printf("%s - int constant\n", yytext); return INTCONSTANT; }
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 83 "scanner.lxi"
+#line 85 "scanner.lxi"
 {printf("%s - str constant\n", yytext); return STRINGCONSTANT; }
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 85 "scanner.lxi"
+#line 87 "scanner.lxi"
 {printf("Error at token %s at line %d\n", yytext, lines); return -1;}
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 87 "scanner.lxi"
+#line 89 "scanner.lxi"
 ECHO;
 	YY_BREAK
-#line 1317 "lex.yy.c"
+#line 1319 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2319,14 +2321,5 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 87 "scanner.lxi"
+#line 89 "scanner.lxi"
 
-
-int main(int argc, char **argv ) 
-{ 
-    if ( argc > 1 ) 
-    	yyin = fopen(argv[1], "r"); 
-    else 
-    	yyin = stdin;
-    yylex();
-}
